@@ -104,7 +104,7 @@ Unbond balance of validator \(Experimental endpoint for WASM execution\)
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-form-data-parameters %}
-{% api-method-parameter name="amojunt" type="integer" required=true %}
+{% api-method-parameter name="amount" type="integer" required=true %}
 The integer amount you want to unbond
 {% endapi-method-parameter %}
 
