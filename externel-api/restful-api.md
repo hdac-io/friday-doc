@@ -9,7 +9,7 @@ description: RESTFul API endpoint description
 * Run rest server
 
 ```text
-./clif rest-server
+clif rest-server
 ```
 
 * Execute appropriate API endpoint
