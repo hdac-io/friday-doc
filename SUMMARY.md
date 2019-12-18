@@ -1,6 +1,6 @@
 # Table of contents
 
-* [VERSION LOG](README.md)
+* [RELEASE LOG](README.md)
 
 ## INSTALLATION
 
