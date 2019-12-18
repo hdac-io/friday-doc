@@ -10,8 +10,6 @@ description: Genesis running for testnet
 
 **Setup a genesis status and run a genesis node**
 
-* note: Fill the name what you want inside &lt; &gt;
-
 ```bash
 # run execution engine grpc server
 ./CasperLabs/execution-engine/target/release/casperlabs-engine-grpc-server $HOME/.casperlabs/.casper-node.sock
