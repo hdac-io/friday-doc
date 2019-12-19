@@ -26,7 +26,8 @@ Send Tx
 {% endapi-method-summary %}
 
 {% api-method-description %}
-**\[NOTE\]** Content-type: application/json
+**\[NOTE\]** Content-type: application/json  
+Check here -&gt; https://cosmos.network/rpc/\#/
 {% endapi-method-description %}
 
 {% api-method-spec %}
