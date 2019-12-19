@@ -20,14 +20,16 @@ clif rest-server
   * The API endpoint itself do not send the tx
 * Send the response above with \`Send Tx\` API
 
+Example python SDK \(Unofficial\) is in [https://github.com/psy2848048/hdacpy](https://github.com/psy2848048/hdacpy)  
+In Javascript, you may contribute from forking with [https://github.com/cosmostation/cosmosjs](https://github.com/cosmostation/cosmosjs)
+
 {% api-method method="post" host="https://localhost:1317" path="/txs" %}
 {% api-method-summary %}
 Send Tx
 {% endapi-method-summary %}
 
 {% api-method-description %}
-**\[NOTE\]** Content-type: application/json  
-Check here -&gt; https://cosmos.network/rpc/\#/
+**\[NOTE\]** Content-type: application/json
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -132,8 +134,39 @@ Wallet of Hdac wallet address starting from 'friday'
 
 {% endapi-method-response-example-description %}
 
-```text
-TBD
+```javascript
+{
+    "mode":"sync",
+    "tx":{
+        "fee":{
+            "amount":[],
+            "gas":"37000"
+        },
+        "memo":"",
+        "msg":[
+            {
+                "type":"executionengine/Execute",
+                "value":{
+                    "block_hash":"AA==",
+                    "contract_owner_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+                    "exec_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+                    "gas_price":"2000000",
+                    "payment_args":"AQAAAAQAAAADgIQe",
+                    "session_args":"AgAAABgAAAAUAAAAFX2WU5Tkt49ZzKlXxfh9zBFKLkQIAAAAAAAAAAAAAAA="
+                }
+            }
+        ],
+        "signatures":[
+            {
+                "account_number":"11335",
+                "pub_key":{
+                    "type":"tendermint/PubKeySecp256k1",
+                    "value":"A49sjCd3Eul+ZXyof7qO460UaO73otrmySHyTNSLW+Xn"},"sequence":"0","signature":"spk/FpIIwMvPv1aKKPCxGWgJ0jdfATpAd2Z0Go+onOhPgMXJtNdiyl+MDaqPLevVlGaZPw42BbhHxrt/EtXFLg=="
+                }
+            }
+        ]
+    }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -181,8 +214,39 @@ Wallet of Hdac wallet address starting from 'friday'
 
 {% endapi-method-response-example-description %}
 
-```text
-
+```javascript
+{
+    "mode":"sync",
+    "tx":{
+        "fee":{
+            "amount":[],
+            "gas":"37000"
+        },
+        "memo":"",
+        "msg":[
+            {
+                "type":"executionengine/Execute",
+                "value":{
+                    "block_hash":"AA==",
+                    "contract_owner_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+                    "exec_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+                    "gas_price":"2000000",
+                    "payment_args":"AQAAAAQAAAADgIQe",
+                    "session_args":"AgAAABgAAAAUAAAAFX2WU5Tkt49ZzKlXxfh9zBFKLkQIAAAAAAAAAAAAAAA="
+                }
+            }
+        ],
+        "signatures":[
+            {
+                "account_number":"11335",
+                "pub_key":{
+                    "type":"tendermint/PubKeySecp256k1",
+                    "value":"A49sjCd3Eul+ZXyof7qO460UaO73otrmySHyTNSLW+Xn"},"sequence":"0","signature":"spk/FpIIwMvPv1aKKPCxGWgJ0jdfATpAd2Z0Go+onOhPgMXJtNdiyl+MDaqPLevVlGaZPw42BbhHxrt/EtXFLg=="
+                }
+            }
+        ]
+    }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -234,8 +298,39 @@ Amount of token you want to send
 
 {% endapi-method-response-example-description %}
 
-```text
-TBD
+```javascript
+{
+    "mode":"sync",
+    "tx":{
+        "fee":{
+            "amount":[],
+            "gas":"37000"
+        },
+        "memo":"",
+        "msg":[
+            {
+                "type":"executionengine/Execute",
+                "value":{
+                    "block_hash":"AA==",
+                    "contract_owner_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+                    "exec_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+                    "gas_price":"2000000",
+                    "payment_args":"AQAAAAQAAAADgIQe",
+                    "session_args":"AgAAABgAAAAUAAAAFX2WU5Tkt49ZzKlXxfh9zBFKLkQIAAAAAAAAAAAAAAA="
+                }
+            }
+        ],
+        "signatures":[
+            {
+                "account_number":"11335",
+                "pub_key":{
+                    "type":"tendermint/PubKeySecp256k1",
+                    "value":"A49sjCd3Eul+ZXyof7qO460UaO73otrmySHyTNSLW+Xn"},"sequence":"0","signature":"spk/FpIIwMvPv1aKKPCxGWgJ0jdfATpAd2Z0Go+onOhPgMXJtNdiyl+MDaqPLevVlGaZPw42BbhHxrt/EtXFLg=="
+                }
+            }
+        ]
+    }
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
