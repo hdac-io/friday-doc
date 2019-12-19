@@ -144,10 +144,6 @@ Transfer token from one to another \(under construction\)
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-form-data-parameters %}
-{% api-method-parameter name="status" type="integer" required=true %}
-OK - 0 / Fail - 1
-{% endapi-method-parameter %}
-
 {% api-method-parameter name="recipient\_address" type="string" required=true %}
 Receiver address
 {% endapi-method-parameter %}
