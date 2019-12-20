@@ -23,6 +23,70 @@ clif rest-server
 Example python SDK \(Unofficial\) is in [https://github.com/psy2848048/hdacpy](https://github.com/psy2848048/hdacpy)  
 In Javascript, you may contribute from forking with [https://github.com/cosmostation/cosmosjs](https://github.com/cosmostation/cosmosjs)
 
+{% api-method method="get" host="https://localhost:1317" path="/txs/<tx\_hash>" %}
+{% api-method-summary %}
+Check Tx
+{% endapi-method-summary %}
+
+{% api-method-description %}
+Check the whole JSON data of given tx hash
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="tx\_hash" type="string" required=true %}
+Broadcasted tx hash
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+  "hash": "string",
+  "height": 0,
+  "tx":{
+        "fee":{
+            "amount":[],
+            "gas":"37000"
+        },
+        "memo":"",
+        "msg":[
+            {
+                "type":"executionengine/Execute",
+                "value":{
+                    "block_hash":"AA==",
+                    "contract_owner_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+                    "exec_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+                    "gas_price":"2000000",
+                    "payment_args":"AQAAAAQAAAADgIQe",
+                    "session_args":"AgAAABgAAAAUAAAAFX2WU5Tkt49ZzKlXxfh9zBFKLkQIAAAAAAAAAAAAAAA="
+                }
+            }
+        ],
+        "signatures":[
+            {
+                "account_number":"11335",
+                "pub_key":{
+                    "type":"tendermint/PubKeySecp256k1",
+                    "value":"A49sjCd3Eul+ZXyof7qO460UaO73otrmySHyTNSLW+Xn"},"sequence":"0","signature":"spk/FpIIwMvPv1aKKPCxGWgJ0jdfATpAd2Z0Go+onOhPgMXJtNdiyl+MDaqPLevVlGaZPw42BbhHxrt/EtXFLg=="
+                }
+            }
+        ]
+    }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 {% api-method method="post" host="https://localhost:1317" path="/txs" %}
 {% api-method-summary %}
 Send Tx
