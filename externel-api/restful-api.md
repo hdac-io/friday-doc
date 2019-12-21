@@ -15,6 +15,7 @@ clif rest-server
 * Execute appropriate API endpoint
   * If sending tx purpose, proceed to sign tx
   * If query purpose, use the response
+* Get account number & sequence from \`Get account info\` API
 * Sign tx in local, and take the result
   * The response is unsigned tx
   * The API endpoint itself do not send the tx
@@ -22,6 +23,58 @@ clif rest-server
 
 Example python SDK \(Unofficial\) is in [https://github.com/psy2848048/hdacpy](https://github.com/psy2848048/hdacpy)  
 In Javascript, you may contribute from forking with [https://github.com/cosmostation/cosmosjs](https://github.com/cosmostation/cosmosjs)
+
+{% api-method method="get" host="https://localhost:1317" path="/auth/accounts/<friday\_address>" %}
+{% api-method-summary %}
+Get account info
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="friday\_address" type="string" required=false %}
+Address of friday system
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```javascript
+{
+    "height": "552",
+    "result": {
+        "type": "friday/Account",
+        "value": {
+            "address": "friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
+            "coins": [
+                {
+                    "denom": "dummy",
+                    "amount": "99226000"
+                }
+            ],
+            "public_key": {
+                "type": "tendermint/PubKeySecp256k1",
+                "value": "A49sjCd3Eul+ZXyof7qO460UaO73otrmySHyTNSLW+Xn"
+            },
+            "account_number": "8",
+            "sequence": "2"
+        }
+    }
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
 {% api-method method="get" host="https://localhost:1317" path="/txs/<tx\_hash>" %}
 {% api-method-summary %}
@@ -350,8 +403,8 @@ Receiver address
 Address of token sender
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="amount" type="integer" required=true %}
-Amount of token you want to send
+{% api-method-parameter name="amount" type="string" required=true %}
+Amount of token you want to send with "dummy" if you followed "Genesis running" \(ex. "1000dummy"\)
 {% endapi-method-parameter %}
 {% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
