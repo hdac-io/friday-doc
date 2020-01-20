@@ -343,6 +343,208 @@ Balance successfully retrieved.
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="post" host="https://localhost:1317" path="/readablename/newname/bech32" %}
+{% api-method-summary %}
+Register readable ID by bech32 public key
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="chain\_id" type="string" required=true %}
+Chain ID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="name" type="string" required=true %}
+Readable name you want to use
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="pubkey\_fridaypub" type="string" required=true %}
+Bech32 public key for mapping  
+ex\) fridaypubxxxxxx...
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="gas" type="string" required=true %}
+Stringlyfied integer value of tx gas fee
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="memo" type="string" required=true %}
+Brief memo of Tx
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="https://localhost:1317" path="/readablename/newname/secp256k1" %}
+{% api-method-summary %}
+Register readable ID by Secp256k1 public key
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="chain\_id" type="string" required=true %}
+Chain ID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="name" type="string" required=true %}
+Readable name you want to use
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="pubkey" type="string" required=true %}
+Secp256k1 public key for mapping
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="gas" type="string" required=true %}
+Stringlyfied integer value of tx gas fee
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="memo" type="string" required=true %}
+Brief memo of Tx
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="put" host="https://localhost:1317" path="/readablename/change/bech32" %}
+{% api-method-summary %}
+Change readable ID public key by Bech32 public key
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="chain\_id" type="string" required=true %}
+Chain ID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="name" type="string" required=true %}
+Readable ID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="old\_pubkey\_fridaypub" type="string" required=true %}
+Old bech32 public key in Bech32 form  
+ex\) fridaypubxxxxxxxx
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="new\_pubkey\_fridaypub" type="string" required=true %}
+New bech32 public key
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="gas" type="string" required=true %}
+Stringlyfied integer value of tx gas fee
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="memo" type="string" required=true %}
+Brief memo of Tx
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="put" host="https://localhost:1317" path="/readablename/change/secp256k1" %}
+{% api-method-summary %}
+Change readable ID public key by Secp256k1 public key
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="chain\_id" type="string" required=true %}
+Chain ID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="name" type="string" required=true %}
+Readable ID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="old\_pubkey" type="string" required=true %}
+Old Secp256k1 public key
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="new\_pubkey" type="string" required=true %}
+New Secp256k1 public key
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="gas" type="string" required=true %}
+Stringlyfied integer value of tx gas fee
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="memo" type="string" required=true %}
+Brief memo of Tx
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
 {% api-method method="post" host="https://localhost:1317" path="/executionlayer/bond" %}
 {% api-method-summary %}
 Bond balance
@@ -355,27 +557,33 @@ Bond balance of validator \(Experimental endpoint for WASM execution\)
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-form-data-parameters %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="chain\_id" type="string" required=true %}
+Chain ID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="token\_contract\_address" type="string" required=true %}
+Token contract address to bond  
+\(Currently dummy\)
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="pubkey\_or\_name" type="string" required=true %}
+Secp256k1 public key \(length: 33\) or registered readable ID
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="amount" type="string" required=true %}
+Stringlyfied integer amount which you want to bond
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="gas\_price" type="string" required=true %}
+Stringlyfied integer Tx gas fee. If less than the required, tx will be failed  
+ex\) "500"
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="memo" type="string" required=true %}
 Brief memo of the Tx
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="chain\_id" type="string" required=true %}
-ID of the chain
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="amount" type="integer" required=true %}
-The integer amount you want to bond
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="gas\_price" type="integer" required=true %}
-Tx gas fee. If less than the required, tx will be failed
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="address" type="string" required=true %}
-Wallet of Hdac wallet address starting from 'friday'
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -435,27 +643,33 @@ Unbond balance of validator \(Experimental endpoint for WASM execution\)
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="memo" type="string" required=true %}
-Brief memo of Tx
-{% endapi-method-parameter %}
-
+{% api-method-body-parameters %}
 {% api-method-parameter name="chain\_id" type="string" required=true %}
-ID of the chain
+Chain ID
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="amount" type="integer" required=true %}
-The integer amount you want to unbond
+{% api-method-parameter name="token\_contract\_address" type="string" required=true %}
+Token contract address to unbond  
+\(Currently dummy\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="gas\_price" type="integer" required=true %}
-Tx gas fee. If less than the required, tx will be failed
+{% api-method-parameter name="pubkey\_or\_name" type="string" required=true %}
+Secp256k1 public key \(length: 33\) or registered readable ID
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="address" type="string" required=true %}
-Wallet of Hdac wallet address starting from 'friday'
+{% api-method-parameter name="amount" type="string" required=true %}
+Stringlyfied integer amount which you want to unbond
 {% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
+
+{% api-method-parameter name="gas\_price" type="string" required=true %}
+Stringlyfied integer Tx gas fee. If less than the required, tx will be failed  
+ex\) "500"
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="memo" type="string" required=true %}
+Brief memo of the Tx
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -515,31 +729,41 @@ Transfer token from one to another \(under construction\)
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="memo" type="string" required=true %}
-Brief memo of the tx
-{% endapi-method-parameter %}
-
+{% api-method-body-parameters %}
 {% api-method-parameter name="chain\_id" type="string" required=true %}
-ID of the chain
+Chain ID
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="gas\_price" type="integer" required=true %}
-Tx gas fee. If less than the required, tx will be failed
+{% api-method-parameter name="token\_contract\_address" type="string" required=true %}
+Token contract address to transfer  
+\(Currently dummy\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="recipient\_address" type="string" required=true %}
-Receiver address
+{% api-method-parameter name="sender\_pubkey\_or\_name" type="string" required=true %}
+Secp256k1 public key or registered readable ID of sender
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="sender\_address" type="string" required=true %}
-Address of token sender
+{% api-method-parameter name="recipient\_pubkey\_or\_name" type="string" required=true %}
+Secp256k1 public key or registered readable ID of recipient
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="amount" type="string" required=true %}
-Amount of token you want to send with "dummy" if you followed "Genesis running" \(ex. "1000dummy"\)
+Stringlyfied integer value. Amount of transfer
 {% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
+
+{% api-method-parameter name="fee" type="string" required=true %}
+Stringlyfied integer value. Tx fee.
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="gas\_price" type="string" required=true %}
+Stringlyfied integer value. Tx gas fee  
+If less than the required, tx will be failed
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="memo" type="string" required=true %}
+Brief memo of the Tx
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
