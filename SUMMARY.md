@@ -7,7 +7,14 @@
 * [Build](installation/build.md)
 * [Genesis running](installation/genesis-running.md)
 
-## Externel API
+## CLI
 
-* [RESTFul API](externel-api/restful-api.md)
+* [Nickname](cli/nickname.md)
+* [Hdac specific](cli/hdac-specific.md)
+
+## RESTFul API
+
+* [Block/Tx](restful-api/block-tx.md)
+* [Nickname](restful-api/nickname.md)
+* [Hdac specific](restful-api/hdac-specific.md)
 

@@ -16,6 +16,7 @@ description: Build step
 #### Build
 
 ```text
+make setup
 make install
 ```
 
