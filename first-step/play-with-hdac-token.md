@@ -126,8 +126,8 @@ clif hdac getbalance --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
 `clif hdac transfer-to <recipient_address_or_nickname> <amont> <fee> <gas-price> --address|--wallet|--nickname <from>`
 
 ```bash
-clif hdac transfer-to friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz 1000000 100000000 20000000 --wallet walletelsa
-clif hdac transfer-to friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz 1000000 100000000 20000000 --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
+clif hdac transfer-to friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz 1000000 100000000 22000000 --wallet walletelsa
+clif hdac transfer-to friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz 1000000 100000000 22000000 --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
 ```
 
 ```javascript
