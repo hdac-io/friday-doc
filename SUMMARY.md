@@ -4,8 +4,8 @@
 
 ## First step
 
-* [Build](first-step/build.md)
-* [Run node from genesis](first-step/run-node-from-genesis.md)
+* [Build](installation/build.md)
+* [Run node from genesis](installation/genesis-running.md)
 * [Play with Hdac token](first-step/play-with-hdac-token.md)
 * [Set & use nickname](first-step/set-and-use-nickname.md)
 
@@ -20,7 +20,7 @@
 
 ## RESTFul API reference <a id="restful-api"></a>
 
-* [Block/Tx](restful-api/block-tx.md)
+* [Block/Tx](externel-api/restful-api.md)
 * [Nickname](restful-api/nickname.md)
 * [Hdac specific](restful-api/hdac-specific.md)
 

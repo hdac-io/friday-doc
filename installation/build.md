@@ -16,13 +16,10 @@ description: Build step
 #### Build
 
 ```text
-make setup
 make install
 ```
 
-#### Test
+#### Troubleshooting
 
-```text
-make test
-```
+TBD
 
