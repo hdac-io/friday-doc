@@ -33,7 +33,7 @@ seeds = "" -> "<genesis node's ID>@<genesis node's IP>:26656"
 ...
 ```
 
-* Replace `~/.nodef/config/genesis.json` of [prerequisites](full-node-and-validator.md#prerequisites) to config folder \(Default: `%HOME/.nodef/config`\)
+* Replace `~/.nodef/config/genesis.json` of [prerequisites](full-node-and-validator.md#prerequisites) to config folder \(Default: `$HOME/.nodef/config`\)
 * copy `~/.nodef/config/manifest.toml` of [prerequisites](full-node-and-validator.md#prerequisites) to config folder
 
 ```bash
