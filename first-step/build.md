@@ -20,7 +20,9 @@ make setup
 make install
 ```
 
-#### Troubleshooting
+#### Test
 
-TBD
+```text
+make test
+```
 
