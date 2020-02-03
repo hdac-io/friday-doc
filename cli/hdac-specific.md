@@ -150,7 +150,7 @@ Password to sign with 'walletelsa':
 Create and join as a validator with an address for reward and BLS-based validator consensus key
 
 ```text
-clif hdac create-validator --from <wallet_alias> --pubkey <BLS_valconspub_key> --moniker <moniker>
+clif hdac create-validator --from <wallet_alias> --pubkey <BLS_valconspub_key> [--moniker <moniker>] [--identity <identity>] [--website <website>] [--details <details>]
 ```
 
 ```text
