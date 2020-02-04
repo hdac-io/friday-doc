@@ -4,14 +4,16 @@
 
 ## First step
 
-* [Build](installation/build.md)
-* [Run node from genesis](installation/genesis-running.md)
+* [Build](first-step/build.md)
+* [Deploy Your Own Friday Testnet](first-step/deploy-your-own-friday-testnet.md)
+* [Join a Network](first-step/join-a-network.md)
 * [Play with Hdac token](first-step/play-with-hdac-token.md)
 * [Set & use nickname](first-step/set-and-use-nickname.md)
 
-## Advanced
+## Validators
 
-* [Full node & validator](advanced/full-node-and-validator.md)
+* [Become a Validator](validators/become-a-validator.md)
+* [Security](validators/security.md)
 
 ## CLI reference <a id="cli"></a>
 
@@ -20,7 +22,7 @@
 
 ## RESTFul API reference <a id="restful-api"></a>
 
-* [Block/Tx](externel-api/restful-api.md)
+* [Block/Tx](restful-api/block-tx.md)
 * [Nickname](restful-api/nickname.md)
 * [Hdac specific](restful-api/hdac-specific.md)
 
