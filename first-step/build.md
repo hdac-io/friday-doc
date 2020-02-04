@@ -2,7 +2,7 @@
 description: Build step
 ---
 
-# Installation
+# Build
 
 ## Build
 
