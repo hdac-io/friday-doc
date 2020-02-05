@@ -17,6 +17,7 @@
 
 ## CLI reference <a id="cli"></a>
 
+* [Environment Variables](cli/environment-variables.md)
 * [Nickname](cli/nickname.md)
 * [Hdac specific](cli/hdac-specific.md)
 
