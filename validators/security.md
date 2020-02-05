@@ -4,7 +4,7 @@
 Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Validator candidates should commence their setup phase now in order to be on time for launch.
 {% endhint %}
 
-## Sentry Nodes \(DDOS Protection\)
+## Sentry Nodes \(DDoS Protection\)
 
 Validators are responsible for ensuring that the network can sustain denial of service attacks.
 

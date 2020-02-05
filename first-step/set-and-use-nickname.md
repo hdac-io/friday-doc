@@ -1,4 +1,4 @@
-# Set & use nickname
+# Set and Use Nickname
 
 ## What & why nickname?
 
