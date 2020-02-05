@@ -1,4 +1,4 @@
-# Play with Hdac Token
+# Play with Hdac token
 
 ## Introduction
 

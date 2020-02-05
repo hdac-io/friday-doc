@@ -4,6 +4,12 @@
 Each validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Validator candidates should commence their setup phase now in order to be on time for launch.
 {% endhint %}
 
+## Key Management
+
+It is mission critical that an attacker cannot steal a validator's key. If this is possible, it puts the entire stake delegated to the compromised validator at risk. Validators should use the best way to keep their keys secure.
+
+We will update this page when more key storage solutions become available.
+
 ## Sentry Nodes \(DDoS Protection\)
 
 Validators are responsible for ensuring that the network can sustain denial of service attacks.
