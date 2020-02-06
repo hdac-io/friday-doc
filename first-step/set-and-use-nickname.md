@@ -1,4 +1,4 @@
-# Set & use nickname
+# Set and Use Nickname
 
 ## What & why nickname?
 
@@ -33,7 +33,7 @@ clif nickname set princesselsa --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073
 clif nickname set princesselsa --wallet walletelsa
 ```
 
-```javascript
+```bash
 {
   "chain_id": "testnet",
   "account_number": "1",
@@ -138,7 +138,7 @@ clif hdac transfer-to sisteranna 1000000 100000000 20000000 --nickname princesse
 clif hdac transfer-to sisteranna 1000000 100000000 20000000 --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
 ```
 
-```javascript
+```bash
 // ... confirm transaction before signing and broadcasting [y/N]: y
 // Password to sign with 'elsa': # 
 // input your password 

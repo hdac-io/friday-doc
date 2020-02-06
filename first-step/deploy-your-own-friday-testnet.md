@@ -44,14 +44,14 @@ nodef validate-genesis
 
 ## Genesis node start
 
-```text
+```bash
 nodef start
 ```
 
 * Note your genesis node's ID and genesis file
 * You can get your node ID using clif
 
-```text
+```bash
 clif status | grep \"id\"
 ```
 

@@ -2,7 +2,7 @@
 description: Build step
 ---
 
-# Build
+# Installation
 
 ## Build
 
@@ -15,14 +15,14 @@ description: Build step
 
 #### Build
 
-```text
+```bash
 make setup
 make install
 ```
 
 #### Test
 
-```text
+```bash
 make test
 ```
 

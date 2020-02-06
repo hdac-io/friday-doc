@@ -1,4 +1,4 @@
-# Play with Hdac token
+# Play with Hdac Token
 
 ## Introduction
 
@@ -130,7 +130,7 @@ clif hdac transfer-to --wallet walletelsa friday15evpva2u57vv6l5czehyk69s0wnq9hr
 clif hdac transfer-to --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz 1000000 100000000 22000000
 ```
 
-```javascript
+```bash
 // ... confirm transaction before signing and broadcasting [y/N]: y
 // Password to sign with 'elsa': # 
 // input your password 

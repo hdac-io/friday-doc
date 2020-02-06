@@ -4,7 +4,7 @@
 
 ## First step
 
-* [Installation](first-step/build.md)
+* [Installation](first-step/installation.md)
 * [Deploy Your Own Friday Testnet](first-step/deploy-your-own-friday-testnet.md)
 * [Join a Network](first-step/join-a-network.md)
 * [Play with Hdac Token](first-step/play-with-hdac-token.md)
