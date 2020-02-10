@@ -8,11 +8,11 @@
 * [Deploy Your Own Friday Testnet](first-step/deploy-your-own-friday-testnet.md)
 * [Join a Network](first-step/join-a-network.md)
 * [Play with Hdac Token](first-step/play-with-hdac-token.md)
-* [Set your nickname](first-step/set-your-nickname.md)
+* [Set Your Nickname](first-step/set-your-nickname.md)
 
 ## How to
 
-* [Play with nickname](how-to/play-with-nickname.md)
+* [Play with Nickname](how-to/play-with-nickname.md)
 
 ## Validators
 

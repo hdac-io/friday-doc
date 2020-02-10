@@ -1,7 +1,7 @@
 # Deploy Your Own Friday Testnet
 
 {% hint style="info" %}
-Before setting up your node, make sure you've [install Friday binaries.](installation.md)
+Before setting up your node, make sure you have [install Friday binaries.](installation.md)
 {% endhint %}
 
 ## Setup
@@ -26,8 +26,8 @@ clif keys add anna # select password
 # add genesis node
 nodef add-genesis-account $(clif keys show elsa -a) 5000000000000dummy,100000000stake
 nodef add-genesis-account $(clif keys show anna -a) 5000000000000dummy,100000000stake
-nodef add-el-genesis-account $(clif keys show elsa -a) "5000000000000" "100000000"
-nodef add-el-genesis-account $(clif keys show anna -a) "5000000000000" "100000000"
+nodef add-el-genesis-account elsa "5000000000000" "100000000"
+nodef add-el-genesis-account anna "5000000000000" "100000000"
 nodef load-chainspec ~/.nodef/config/manifest.toml
 
 # apply default clif configure
