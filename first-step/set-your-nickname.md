@@ -1,4 +1,4 @@
-# Set Your Nickname
+# Set your nickname
 
 ## Set nickname - address mapping
 

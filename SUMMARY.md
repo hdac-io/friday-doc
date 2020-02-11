@@ -1,6 +1,6 @@
 # Table of contents
 
-* [RELEASE LOG](README.md)
+* [About Friday Mainnet](README.md)
 
 ## First step
 
@@ -35,4 +35,8 @@
 
 * [What is wallet](mechanism-and-features-description/what-is-wallet.md)
 * [Nickname](mechanism-and-features-description/nickname.md)
+
+## Release
+
+* [History](release/history.md)
 
