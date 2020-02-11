@@ -1,15 +1,15 @@
 # Join a Network
 
 {% hint style="info" %}
-Before setting up your node, make sure you've [install Friday binaries.](installation.md)
+Before setting up your node, make sure you have [install Friday binaries.](installation.md)
+
+Do not [Deploy Your Own Friday Testnet](deploy-your-own-friday-testnet.md).
 {% endhint %}
 
 ## Setting Up a New Node
 
 ### Prerequisites
 
-* Build friday & Casperlabs EE binary [Build](installation.md)
-* Do not execute any instruction in [Run node from genesis](deploy-your-own-friday-testnet.md)
 * Check launch information from [launch repository](https://github.com/hdac-io/launch)
 * Take `genesis.json` and `manifest.toml` file from [launch repository](https://github.com/hdac-io/launch)
 

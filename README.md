@@ -13,17 +13,17 @@ Changes:
 
 Changes:
 
-* enlarge default tx bytes to 3MiB
-* add staking feature
-* resolve some errors\(bls key compare, transfer for nonexistent account\)
+* Enlarged default tx bytes to 3MiB
+* Added staking feature
+* Resolved some errors\(bls key compare, transfer for nonexistent account\)
 
 ## 0.2.0 - 2019-12-23
 
 Changes:
 
-* Add load-chainspec command [\#39](https://github.com/hdac-io/friday/pull/39)
-* REST API support [\#38](https://github.com/hdac-io/friday/pull/38)
-* Change node key type from ed25519 to BLS 12-381 [hdac-io/tendermint\#9](https://github.com/hdac-io/tendermint/pull/9)
+* Add edload-chainspec command [\#39](https://github.com/hdac-io/friday/pull/39)
+* REST API supported [\#38](https://github.com/hdac-io/friday/pull/38)
+* Changed node key type from ed25519 to BLS 12-381 [hdac-io/tendermint\#9](https://github.com/hdac-io/tendermint/pull/9)
 
 ## 0.1.0 - 2019-12-09
 
