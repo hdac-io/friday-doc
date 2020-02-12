@@ -1,7 +1,7 @@
 # What is wallet
 
 {% hint style="info" %}
-If you read the document in your first visit, we recommend to perform tutorials described in [Installation](../first-step/installation.md), [Deploy Your Own Friday Testnet](../first-step/deploy-your-own-friday-testnet.md), and [Play with Hdac Token](../first-step/play-with-hdac-token.md) first.
+If you read the document in your first visit, we recommend to perform tutorials described in [Installation](../first-step/installation.md), [Deploy Your Own Friday Testnet](../how-to/deploy-your-own-friday-testnet.md), and [Play with Hdac Token](../how-to/play-with-hdac-token.md) first.
 {% endhint %}
 
 ## What is 'wallet'?

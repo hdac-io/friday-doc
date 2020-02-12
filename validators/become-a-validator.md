@@ -1,7 +1,7 @@
 # Become a Validator
 
 {% hint style="info" %}
-Before setting up your validator node, make sure you have already gone through the [Full Node Setup](../first-step/join-a-network.md) guide.
+Before setting up your validator node, make sure you have already gone through the [Full Node Setup](../how-to/join-a-network.md) guide.
 {% endhint %}
 
 ## What is a Validator?
@@ -15,7 +15,7 @@ Users looking to operate a Friday validator should study up on the correct [secu
 ## Create Your Own Validator
 
 * Prepare local wallet
-  * [Create new wallet](../first-step/play-with-hdac-token.md#create-new-wallet) or [recover wallet](../first-step/play-with-hdac-token.md#recover-your-wallet-from-mnemonic-words)
+  * [Create new wallet](../how-to/play-with-hdac-token.md#create-new-wallet) or [recover wallet](../how-to/play-with-hdac-token.md#recover-your-wallet-from-mnemonic-words)
 * [Create validator](../cli/hdac-specific.md#create-validator)
 
 ```bash

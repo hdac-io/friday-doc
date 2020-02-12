@@ -1,4 +1,4 @@
-# Play with nickname
+# Play with Nickname
 
 Every CLI interface has `--nickname` flag. Set your nickname and achieve your convenience.
 

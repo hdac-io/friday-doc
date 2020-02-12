@@ -5,13 +5,13 @@
 ## First step
 
 * [Installation](first-step/installation.md)
-* [Deploy Your Own Friday Testnet](first-step/deploy-your-own-friday-testnet.md)
-* [Join a Network](first-step/join-a-network.md)
-* [Play with Hdac Token](first-step/play-with-hdac-token.md)
-* [Set Your Nickname](first-step/set-your-nickname.md)
 
 ## How to
 
+* [Deploy Your Own Friday Testnet](how-to/deploy-your-own-friday-testnet.md)
+* [Join a Network](how-to/join-a-network.md)
+* [Play with Hdac Token](how-to/play-with-hdac-token.md)
+* [Set Your Nickname](how-to/set-your-nickname.md)
 * [Play with Nickname](how-to/play-with-nickname.md)
 
 ## Validators
