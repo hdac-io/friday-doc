@@ -14,7 +14,7 @@ Currently, the testnet supports:
 
 First of all, you need your own wallet. It is needed when you execute action and send your own message to Tx. This section describes what is wallet, what you can get, and how to execute with your wallet.
 
-\[Note\] You already created your wallet at [Run node from genesis](deploy-your-own-friday-testnet.md). In there, the step proceeded without any detail information. If you're already done it, please just read the below and learn what the each step means.
+\[Note\] You already created your wallet at [Run node from genesis](../first-step/deploy-your-own-friday-testnet.md). In there, the step proceeded without any detail information. If you're already done it, please just read the below and learn what the each step means.
 
 ### Create new wallet
 

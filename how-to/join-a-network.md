@@ -3,7 +3,7 @@
 {% hint style="info" %}
 Before setting up your node, make sure you have [install Friday binaries.](../first-step/installation.md)
 
-Do not [Deploy Your Own Friday Testnet](deploy-your-own-friday-testnet.md).
+Do not [Deploy Your Own Friday Testnet](../first-step/deploy-your-own-friday-testnet.md).
 {% endhint %}
 
 ## Setting Up a New Node
