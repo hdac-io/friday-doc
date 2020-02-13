@@ -1,6 +1,6 @@
 # Set Your Nickname
 
-## Set nickname - address mapping
+## Set Nickname - Address Mapping
 
 You may register by address, and the address can be access from two ways: wallet alias and address \(e.g. friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv\)
 
@@ -43,7 +43,7 @@ clif nickname set princesselsa --wallet walletelsa
 After confirmation, you may use `princesselsa` as a nickname instead of `friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv` . Of course, `friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv` is still valid to use.  
 \(NOTE: `elsa` is an alias of your local wallet, **not nickname**. The name of the local wallet alias is not stored in mainnet.\)
 
-## Check nickname - address mapping status
+## Check Nickname - Address Mapping Status
 
 * Usage: `clif nickname get-address princesselsa`
 * Example
@@ -57,7 +57,7 @@ clif nickname get-address princesselsa
 }
 ```
 
-## Change public key of readable ID
+## Change Public Key of Nickname
 
 * Usage
   * By wallet alias: `clif nickname change-to princesselsa friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz --wallet walletanna`

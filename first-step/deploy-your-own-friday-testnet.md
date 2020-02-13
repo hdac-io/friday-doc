@@ -4,9 +4,8 @@
 Before setting up your node, make sure you have [install Friday binaries.](installation.md)
 {% endhint %}
 
-## Setup
+## Prepare
 
-**Setup a genesis status and run a genesis node**  
 Follow the steps below to create genesis block file and set initial validator.
 
 ```bash
@@ -42,7 +41,7 @@ nodef collect-gentxs
 nodef validate-genesis
 ```
 
-## Genesis node start
+## Start Your Own Genesis Node
 
 ```bash
 nodef start

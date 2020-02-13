@@ -10,7 +10,7 @@ Currently, the testnet supports:
 * Transfer
 * Bond / Unbond
 
-## Create your wallet
+## Create Your Wallet
 
 First of all, you need your own wallet. It is needed when you execute action and send your own message to Tx. This section describes what is wallet, what you can get, and how to execute with your wallet.
 
@@ -57,7 +57,7 @@ skin bracket grief xxxx xxxx xxxx xxxx xxxx
 }
 ```
 
-## Check & transfer token
+## Check and Transfer Token
 
 Now, you can manage your token with your own wallet. Input command below and experience the wallet by yourself.
 

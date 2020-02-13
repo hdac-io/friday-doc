@@ -1,6 +1,6 @@
 # Nickname
 
-### Set nickname
+## Set Nickname
 
 Set nickname - address mapping and enable readable nickname
 
@@ -40,7 +40,7 @@ confirm transaction before signing and broadcasting [y/N]: Y
 
 After confirmation, you can use nickname instead of typing full address.
 
-### Change address of nickname
+## Change Address of Nickname
 
 Change address of the given nickname.
 
@@ -78,7 +78,7 @@ confirm transaction before signing and broadcasting [y/N]: Y
 
 After confirmation, you may use changed address by current nickname.
 
-### Get address
+## Get Address
 
 Get mapped address of current nickname
 
