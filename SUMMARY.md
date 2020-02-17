@@ -9,7 +9,7 @@
 
 ## How to
 
-* [Join a Network](first-step/join-a-network.md)
+* [Join a Network](how-to/join-a-network.md)
 * [Play with Hdac Token](how-to/play-with-hdac-token.md)
 * [Set Your Nickname](how-to/set-your-nickname.md)
 * [Play with Nickname](how-to/play-with-nickname.md)
