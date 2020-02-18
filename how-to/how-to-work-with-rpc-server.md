@@ -306,6 +306,91 @@ Response:
 
 TADA~~ finally, you can send Tx via JSON RPC!!
 
+But it is not the end of that.
+
+1. Check `success` whether it is true or not
+2. It can be `false` in broadcasting phase although it appears `true`
+
+### Check the sent Tx is really finalized or not
+
+Take `txhash` and check the `success` keyword.
+
+**GET** `http://<remote_address>:<port>/txs/<tx_hash>`
+
+```javascript
+{
+  "height": "502",
+  "txhash": "00218B2D3627DC3838730188A1DD06DCA6C58B563DC6688FF51E96035DFD3DDB",
+  "code": 0,
+  "logs": [
+    {
+      "msg_index": 0,
+      "success": true,
+      "log": "",
+      "events": [
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "action",
+              "value": "executionengine"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "gas_wanted": "22000000",
+  "gas_used": "5499449",
+  "tx": {
+    "type": "friday/StdTx",
+    "value": {
+      "msg": [
+        {
+          "type": "executionengine/Transfer",
+          "value": {
+            "contract_address": "dummyAddress",
+            "from_address": "friday19sw6aqmy2qdwg54lnkzl7qjxcds8pnx3dclu8n",
+            "to_address": "friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz",
+            "amount": "1000000000",
+            "fee": "100000000",
+            "gas_price": "22000000"
+          }
+        }
+      ],
+      "fee": {
+        "amount": [],
+        "gas": "22000000"
+      },
+      "signatures": [
+        {
+          "pub_key": {
+            "type": "tendermint/PubKeySecp256k1",
+            "value": "A+UmciOYYvW4k9hy/yshq5i+XOK7bv6gIWWfLnInah7o"
+          },
+          "signature": "hJdZJcMfVDccOKaUh8wPdl5ks2ACbCImI4CE5KB5Z7xTZcxbH/Q69H94TDHMw0dXbv0inS6hAYQrQixRWTlOIA=="
+        }
+      ],
+      "memo": ""
+    }
+  },
+  "timestamp": "2020-02-18T08:51:40Z",
+  "events": [
+    {
+      "type": "message",
+      "attributes": [
+        {
+          "key": "action",
+          "value": "executionengine"
+        }
+      ]
+    }
+  ]
+}
+```
+
+You can see `success: true`! Real TADA~~! 
+
 ## Complicated?
 
 You may use python SDK \(Unofficial\). It is in [https://github.com/psy2848048/hdacpy](https://github.com/psy2848048/hdacpy)  
