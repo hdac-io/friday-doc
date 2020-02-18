@@ -1,264 +1,140 @@
 # Hdac specific
 
-{% api-method method="get" host="https://localhost:1317" path="/contract/balance?address=friday15kvpva2u57vv6l5czehyk69s0wnq9hrkqulwfz" %}
-{% api-method-summary %}
-Get balance
-{% endapi-method-summary %}
+## Get balance
 
-{% api-method-description %}
-This endpoint allows you to get HDAC balance
-{% endapi-method-description %}
+**\[GET\]** https://localhost:1317/hdac/balance?address=&lt;address\_or\_nickname&gt;
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="address" type="string" required=true %}
-Wallet of Hdac wallet address
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Balance successfully retrieved.
-{% endapi-method-response-example-description %}
+Request:
 
 ```text
-{
-    "value": 5000000
-}
+https://localhost:1317/hdac/balance?address=fridayxxxx...
+or
+https://localhost:1317/hdac/balance?address=princesselsa
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
-{% api-method method="post" host="https://localhost:1317" path="/contract/bond" %}
-{% api-method-summary %}
-Bond balance
-{% endapi-method-summary %}
-
-{% api-method-description %}
-Bond balance of validator \(Experimental endpoint for WASM execution\)  
-**\[NOTE\]** Content-Type: application/json
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="chain\_id" type="string" required=true %}
-Chain ID
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="token\_contract\_address" type="string" required=true %}
-Token contract address to bond  
-\(Currently dummy\)
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="address\_or\_nickname" type="string" required=true %}
-Address or registered nickname
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="amount" type="string" required=true %}
-Stringlyfied integer amount which you want to bond
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="gas\_price" type="string" required=true %}
-Stringlyfied integer Tx gas fee. If less than the required, tx will be failed  
-ex\) "500"
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="memo" type="string" required=true %}
-Brief memo of the Tx
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
+Response:
 
 ```javascript
 {
-    "mode":"sync",
-    "tx":{
-        "fee":{
-            "amount":[],
-            "gas":"37000"
-        },
-        "memo":"",
-        "msg":[
-            {
-                "type":"executionengine/Execute",
-                "value":{
-                    "block_hash":"AA==",
-                    "contract_owner_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
-                    "exec_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
-                    "gas_price":"2000000",
-                    "payment_args":"AQAAAAQAAAADgIQe",
-                    "session_args":"AgAAABgAAAAUAAAAFX2WU5Tkt49ZzKlXxfh9zBFKLkQIAAAAAAAAAAAAAAA="
-                }
-            }
-        ],
-        "signatures":[
-            {
-                "account_number":"11335",
-                "pub_key":{
-                    "type":"tendermint/PubKeySecp256k1",
-                    "value":"A49sjCd3Eul+ZXyof7qO460UaO73otrmySHyTNSLW+Xn"},"sequence":"0","signature":"spk/FpIIwMvPv1aKKPCxGWgJ0jdfATpAd2Z0Go+onOhPgMXJtNdiyl+MDaqPLevVlGaZPw42BbhHxrt/EtXFLg=="
-                }
-            }
-        ]
-    }
+    "value": 500000000000000
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
-{% api-method method="post" host="https://localhost:1317" path="/contract/unbond" %}
-{% api-method-summary %}
-Unbond balance
-{% endapi-method-summary %}
+## Bond balance
 
-{% api-method-description %}
-Unbond balance of validator \(Experimental endpoint for WASM execution\)  
-**\[NOTE\]** Content-Type: application/json
-{% endapi-method-description %}
+**\[POST\]** http://localhost:1317/hdac/bond
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="chain\_id" type="string" required=true %}
-Chain ID
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="token\_contract\_address" type="string" required=true %}
-Token contract address to unbond  
-\(Currently dummy\)
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="address\_or\_nickname" type="string" required=true %}
-Address or registered nickname
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="amount" type="string" required=true %}
-Stringlyfied integer amount which you want to unbond
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="gas\_price" type="string" required=true %}
-Stringlyfied integer Tx gas fee. If less than the required, tx will be failed  
-ex\) "500"
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="memo" type="string" required=true %}
-Brief memo of the Tx
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
+Request:
 
 ```javascript
 {
-    "mode":"sync",
-    "tx":{
-        "fee":{
-            "amount":[],
-            "gas":"37000"
-        },
-        "memo":"",
-        "msg":[
+	"base_req": {
+		"chain_id": "testnet",
+		"gas": "20000000",
+		"memo": "",
+		"from": "<address_or_nickname>"
+	},
+	"fee": "100000000",
+	"amount":"1000000"
+}
+```
+
+Response:
+
+```javascript
+{
+    "type": "friday/StdTx",
+    "value": {
+        "msg": [
             {
-                "type":"executionengine/Execute",
-                "value":{
-                    "block_hash":"AA==",
-                    "contract_owner_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
-                    "exec_account":"friday1lgharzgds89lpshr7q8kcmd2esnxkfpwmfgk32",
-                    "gas_price":"2000000",
-                    "payment_args":"AQAAAAQAAAADgIQe",
-                    "session_args":"AgAAABgAAAAUAAAAFX2WU5Tkt49ZzKlXxfh9zBFKLkQIAAAAAAAAAAAAAAA="
+                "type": "executionengine/Bond",
+                "value": {
+                    "contract_address": "",
+                    "from_address": "friday19sw6aqmy2qdwg54lnkzl7qjxcds8pnx3dclu8n",
+                    "amount": "1000000",
+                    "fee": "100000000",
+                    "gas_price": "20000000"
                 }
             }
         ],
-        "signatures":[
-            {
-                "account_number":"11335",
-                "pub_key":{
-                    "type":"tendermint/PubKeySecp256k1",
-                    "value":"A49sjCd3Eul+ZXyof7qO460UaO73otrmySHyTNSLW+Xn"},"sequence":"0","signature":"spk/FpIIwMvPv1aKKPCxGWgJ0jdfATpAd2Z0Go+onOhPgMXJtNdiyl+MDaqPLevVlGaZPw42BbhHxrt/EtXFLg=="
-                }
-            }
-        ]
+        "fee": {
+            "amount": [],
+            "gas": "20000000"
+        },
+        "signatures": null,
+        "memo": ""
     }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
 
-{% api-method method="post" host="https://localhost:1317" path="/contract/transfer" %}
-{% api-method-summary %}
-Transfer
-{% endapi-method-summary %}
+## Unbond balance
 
-{% api-method-description %}
-Transfer token from one to another
-{% endapi-method-description %}
+**\[POST\]** http://localhost:1317/hdac/unbond
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="chain\_id" type="string" required=true %}
-Chain ID
-{% endapi-method-parameter %}
+Request:
 
-{% api-method-parameter name="token\_contract\_address" type="string" required=true %}
-Token contract address to transfer  
-\(Currently dummy\)
-{% endapi-method-parameter %}
+```javascript
+{
+	"base_req": {
+		"chain_id": "testnet",
+		"gas": "20000000",
+		"memo": "",
+		"from": "<address_or_nickname>"
+	},
+	"fee": "100000000",
+	"amount":"1000000"
+}
+```
 
-{% api-method-parameter name="sender\_address\_or\_nickname" type="string" required=true %}
-Address or nickname of sender
-{% endapi-method-parameter %}
+Response:
 
-{% api-method-parameter name="recipient\_address\_or\_nickname" type="string" required=true %}
-Address or nickname of recipient
-{% endapi-method-parameter %}
+```javascript
+{
+    "type": "friday/StdTx",
+    "value": {
+        "msg": [
+            {
+                "type": "executionengine/UnBond",
+                "value": {
+                    "contract_address": "",
+                    "from_address": "friday19sw6aqmy2qdwg54lnkzl7qjxcds8pnx3dclu8n",
+                    "amount": "1000000",
+                    "fee": "100000000",
+                    "gas_price": "20000000"
+                }
+            }
+        ],
+        "fee": {
+            "amount": [],
+            "gas": "20000000"
+        },
+        "signatures": null,
+        "memo": ""
+    }
+}
+```
 
-{% api-method-parameter name="amount" type="string" required=true %}
-Stringlyfied integer value. Amount of transfer
-{% endapi-method-parameter %}
+## Transfer
 
-{% api-method-parameter name="fee" type="string" required=true %}
-Stringlyfied integer value. Tx fee.
-{% endapi-method-parameter %}
+**\[POST\]** http://localhost:1317/hdac/transfer
 
-{% api-method-parameter name="gas\_price" type="string" required=true %}
-Stringlyfied integer value. Tx gas fee  
-If less than the required, tx will be failed
-{% endapi-method-parameter %}
+Request:
 
-{% api-method-parameter name="memo" type="string" required=true %}
-Brief memo of the Tx
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+```javascript
+{
+	"base_req": {
+		"chain_id": "testnet",
+		"gas": "20000000",
+		"memo": "",
+		"from": "<address_or_nickname>"
+	},
+	"recipient_address_or_nickname":"friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv",
+	"amount":"1000000",
+	"fee": "100000000"
+}
+```
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
+Response
 
 ```javascript
 {
@@ -268,28 +144,130 @@ Brief memo of the Tx
             {
                 "type": "executionengine/Transfer",
                 "value": {
-                    "token_contract_address": "friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz",
-                    "from_address": "friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz",
+                    "contract_address": "",
+                    "from_address": "friday19sw6aqmy2qdwg54lnkzl7qjxcds8pnx3dclu8n",
                     "to_address": "friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv",
-                    "transfer_code": "//WASM bindary byte//",
-                    "transfer_args": "AgAAACAAAABmcmlkYXliZWdpbnMimmflkKW1c3LpGlu9+dh0BgG/0QgAAABAQg8AAAAAAA==",
-                    "payment_code": "//WASM binary byte//",
-                    "payment_args": "AQAAAAEAAAAA",
-                    "gas_price": "0"
+                    "amount": "1000000",
+                    "fee": "100000000",
+                    "gas_price": "20000000"
                 }
             }
         ],
         "fee": {
             "amount": [],
-            "gas": "0"
+            "gas": "20000000"
         },
         "signatures": null,
         "memo": ""
     }
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+
+## Create validator
+
+**\[POST\]** http://localhost:1317/hdac/validators
+
+Request:
+
+```javascript
+{
+	"base_req": {
+		"chain_id": "testnet",
+		"gas": "20000000",
+		"memo": "",
+		"from": "friday19sw6aqmy2qdwg54lnkzl7qjxcds8pnx3dclu8n"
+	},
+	"cons_pub_key":"fridayvalconspub16jrl8jvqq9cj7569gec8sd6dv4e4w46g25uk7vm52fpk6nfn23p5zv60xekxuse3df39sjz4g9d92nfc0f3rs3ec2fpxxum9wej52428w968xwzww9erw53ng5u9zu23fdvk226z0fnx5mn2f4qk542ygf9xjvptve6y7a6fxe8kjm6s2e3kja2twezyvmt5245ystm4ga94y4zjwfg523c477wna",
+	"description":{
+		"moniker": "testnode1",
+		"identity": "",
+		"website": "https://hdac.io",
+		"details": ""
+	}
+}
+```
+
+Response:
+
+```javascript
+{
+    "type": "friday/StdTx",
+    "value": {
+        "msg": [
+            {
+                "type": "executionengine/CreateValidator",
+                "value": {
+                    "validator_address": "friday19sw6aqmy2qdwg54lnkzl7qjxcds8pnx3dclu8n",
+                    "cons_pubkey": "fridayvalconspub16jrl8jvqq9cj7569gec8sd6dv4e4w46g25uk7vm52fpk6nfn23p5zv60xekxuse3df39sjz4g9d92nfc0f3rs3ec2fpxxum9wej52428w968xwzww9erw53ng5u9zu23fdvk226z0fnx5mn2f4qk542ygf9xjvptve6y7a6fxe8kjm6s2e3kja2twezyvmt5245ystm4ga94y4zjwfg523c477wna",
+                    "description": {
+                        "moniker": "testnode1",
+                        "identity": "",
+                        "website": "https://hdac.io",
+                        "details": ""
+                    }
+                }
+            }
+        ],
+        "fee": {
+            "amount": [],
+            "gas": "20000000"
+        },
+        "signatures": null,
+        "memo": ""
+    }
+}
+```
+
+## Edit validator
+
+**\[PUT\]** http://localhost:1317/hdac/validators
+
+Request:
+
+```javascript
+{
+	"base_req": {
+		"chain_id": "testnet",
+		"gas": "20000000",
+		"memo": "",
+		"from": "friday19sw6aqmy2qdwg54lnkzl7qjxcds8pnx3dclu8n"
+	},
+	"description":{
+		"moniker": "testnode1",
+		"identity": "",
+		"website": "https://hdac.io",
+		"details": ""
+	}
+}
+```
+
+Response:
+
+```javascript
+{
+    "type": "friday/StdTx",
+    "value": {
+        "msg": [
+            {
+                "type": "executionengine/EditValidator",
+                "value": {
+                    "address": "friday19sw6aqmy2qdwg54lnkzl7qjxcds8pnx3dclu8n",
+                    "Description": {
+                        "moniker": "testnode1",
+                        "identity": "",
+                        "website": "https://hdac.io",
+                        "details": ""
+                    }
+                }
+            }
+        ],
+        "fee": {
+            "amount": [],
+            "gas": "20000000"
+        },
+        "signatures": null,
+        "memo": ""
+    }
+}
+```
 
