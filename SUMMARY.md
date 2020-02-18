@@ -27,6 +27,7 @@
 
 ## RESTFul API reference <a id="restful-api"></a>
 
+* [How to work with RPC server](restful-api/how-to-work-with-rpc-server.md)
 * [Block/Tx](restful-api/block-tx.md)
 * [Nickname](restful-api/nickname.md)
 * [Hdac specific](restful-api/hdac-specific.md)
