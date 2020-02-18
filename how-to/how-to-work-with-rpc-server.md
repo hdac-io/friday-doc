@@ -159,6 +159,10 @@ So, the sign message of the case above would be like this:
 4. Sign the message using the prepared message and signing function of cryptographic library of your language. \(Hash function: SHA256\)
 5. Encode the signature into Base64, and take it
 
+#### Encode Secp256k1 public key to Base64
+
+Take 33 byted-Secp256k1 public key, and encode into Base64
+
 #### Prepare pushable Tx
 
 This is the basic form of pushable Tx.

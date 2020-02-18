@@ -1,15 +1,15 @@
 # Join a Network
 
 {% hint style="info" %}
-Before setting up your node, make sure you have [install Friday binaries.](../first-step/installation.md)
-
-Do not [Deploy Your Own Friday Testnet](../first-step/deploy-your-own-friday-testnet.md).
+Before setting up your node, make sure you've [install Friday binaries.](installation.md)
 {% endhint %}
 
 ## Setting Up a New Node
 
 ### Prerequisites
 
+* Build friday & Casperlabs EE binary [Build](installation.md)
+* Do not execute any instruction in [Run node from genesis](deploy-your-own-friday-testnet.md)
 * Check launch information from [launch repository](https://github.com/hdac-io/launch)
 * Take `genesis.json` and `manifest.toml` file from [launch repository](https://github.com/hdac-io/launch)
 
@@ -42,9 +42,6 @@ seeds = "" -> "<genesis node's ID>@<genesis node's IP>:26656"
 cp %LAUNCH_GIT_FOLDER/manifest.toml ~/.nodef/config
 ```
 
-* Temporarily, you should change contract directory on ~/.nodef/.
-  * download [https://github.com/hdac-io/launch/releases/download/v0.5.0/contracts.zip](https://github.com/hdac-io/launch/releases/download/v0.5.0/contracts.zip) and extract it.
-  * overwrite them to ~/.nodef/contract
 * Start your node and it syncs blocks from seed nodes
 
 ```bash

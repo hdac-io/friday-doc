@@ -2,20 +2,6 @@
 
 ​[​​![Travis](https://travis-ci.com/hdac-io/friday.svg?token=bhU3g7FdixBp5h3M2its&branch=master)​](https://travis-ci.com/hdac-io/friday/branches) [​​![codecov](https://codecov.io/gh/hdac-io/friday/branch/master/graph/badge.svg?token=hQEgzmULjh)​](https://codecov.io/gh/hdac-io/friday)​
 
-## 0.5.0 - 2020-02-17 <a id="0-4-0-2020-01-20"></a>
-
-**Features**
-
-* Supported external WASM file execution
-* Shortened Tx message of Hdac-specified execution
-* Organized & optimized internal keeper logic
-
-#### Interface
-
-* Reorganized CLI & JSON RPC interface
-* Supported passing arguments as JSON to WASM \(currently CLI only\)
-* Unified address system
-
 ## 0.4.0 - 2020-01-20 <a id="0-4-0-2020-01-20"></a>
 
 Changes:
