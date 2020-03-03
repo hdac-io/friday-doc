@@ -10,7 +10,7 @@ Follow the steps below to create genesis block file and set initial validator.
 
 ```bash
 # run execution engine grpc server
-./CasperLabs/execution-engine/target/release/casperlabs-engine-grpc-server $HOME/.casperlabs/.casper-node.sock
+./CasperLabs/execution-engine/target/release/casperlabs-engine-grpc-server $HOME/.casperlabs/.casper-node.sock&
 
 # init node
 nodef init testnode --chain-id testnet
@@ -23,10 +23,10 @@ clif keys add elsa # select password
 clif keys add anna # select password
 
 # add genesis node
-nodef add-genesis-account $(clif keys show elsa -a) 5000000000000dummy,100000000stake
-nodef add-genesis-account $(clif keys show anna -a) 5000000000000dummy,100000000stake
-nodef add-el-genesis-account elsa "5000000000000" "100000000"
-nodef add-el-genesis-account anna "5000000000000" "100000000"
+nodef add-genesis-account $(clif keys show elsa -a) 100000000stake
+nodef add-genesis-account $(clif keys show anna -a) 100000000stake
+nodef add-el-genesis-account elsa "1000000000000000000000000000" "1000000000000000000"
+nodef add-el-genesis-account anna "1000000000000000000000000000" "1000000000000000000"
 nodef load-chainspec ~/.nodef/config/manifest.toml
 
 # apply default clif configure
@@ -47,14 +47,7 @@ nodef validate-genesis
 nodef start
 ```
 
-* Note your genesis node's ID and genesis file
-* You can get your node ID using clif
 
-```bash
-clif status | grep \"id\"
-```
-
-* Your genesis file exists \`~/.nodef/config/genesis.json\`
 
 **Congratulations!** Now Hdac testnet is on running. From now on, you may make a fun with Hdac token. You may proceed to next chapter.
 

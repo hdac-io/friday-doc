@@ -393,7 +393,8 @@ Take `txhash` and check the `success` keyword.
 }
 ```
 
-You can see `success: true`! Real TADA~~! 
+You can see `success: true`!  
+Real TADA~~! 
 
 ## Complicated?
 

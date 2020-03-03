@@ -5,12 +5,12 @@
 Set nickname - address mapping and enable readable nickname
 
 ```bash
-clif nickname set <nickname> --address|--wallet <owner>
+clif nickname set <nickname> --from <address|wallet>
 ```
 
 ```bash
-clif nickname set princesselsa --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
-clif nickname set princesselsa --wallet walletelsa
+clif nickname set princesselsa --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
+clif nickname set princesselsa --from walletelsa
 
 {
   "chain_id": "testnet",
@@ -45,12 +45,12 @@ After confirmation, you can use nickname instead of typing full address.
 Change address of the given nickname.
 
 ```bash
-clif nickname change-to <nickname> <new_address> --wallet|-address <old_one>
+clif nickname change-to <nickname> <new address> --from <wallet|address>
 ```
 
 ```bash
-clif nickname change-to princesselsa friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz --wallet walletanna
-clif nickname change-to princesselsa friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
+clif nickname change-to princesselsa friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz --from walletanna
+clif nickname change-to princesselsa friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
 
 {
   "chain_id": "testnet",

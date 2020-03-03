@@ -1,7 +1,7 @@
 # Become a Validator
 
 {% hint style="info" %}
-Before setting up your validator node, make sure you have already gone through the [Full Node Setup](../how-to/join-a-network.md) guide.
+Before setting up your validator node, make sure you have already gone through the [Join a Network](../how-to/join-a-network.md) guide.
 {% endhint %}
 
 ## What is a Validator?
@@ -15,24 +15,24 @@ Users looking to operate a Friday validator should study up on the correct [secu
 ## Create Your Own Validator
 
 * Prepare local wallet
-  * [Create new wallet](../how-to/play-with-hdac-token.md#create-new-wallet) or [recover wallet](../how-to/play-with-hdac-token.md#recover-your-wallet-from-mnemonic-words)
-* [Create validator](../cli/hdac-specific.md#create-validator)
+  * [Create your wallet](../how-to/create-your-wallet.md)
+* Create validator
 
-```bash
-clif hdac create-validator \
---wallet welcomeval \
---pubkey $(nodef tendermint show-validator) \
---moniker valiator-bryan
-```
+  ```bash
+  clif hdac create-validator \
+  --from <wallet alias> \
+  --pubkey $(nodef tendermint show-validator) \
+  --moniker <validator moniker name>
+  ```
 
-* Bonding amount
+* Bond amount
 
-```bash
-clif hdac bond --wallet welcomeval 1000000 100000000 30000000
-```
+  ```bash
+  clif hdac bond --from <wallet alias> 10 0.01 30000000
+  ```
 
 {% hint style="danger" %}
-If you want to disconnect your validating node, please execute [unbond](../cli/hdac-specific.md#unbond-hdac-token) first!
+If you want to disconnect your validator node, please beware of [unboning ](../cli/hdac-specific.md#unbond-hdac-token)it first!
 {% endhint %}
 
  

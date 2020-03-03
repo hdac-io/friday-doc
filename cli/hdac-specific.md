@@ -1,19 +1,37 @@
 # Hdac specific
 
+### Get balance
+
+Check the value of owner's balance
+
+```bash
+clif hdac getbalance --from <wallet|nickname|address>
+```
+
+```bash
+clif hdac getbalance --from walletelsa
+clif hdac getbalance --from princesselsa
+clif hdac getbalance --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
+
+{
+   "value": "5000000000000"
+}
+```
+
 ### Transfer
 
 Transfer Hdac token to another account
 
-```text
-clif hdac transfer-to <recipient_address_or_nickname> <amount> <fee> <gas-price> --address|--wallet|--nickname <from>
+```bash
+clif hdac transfer-to <recipient_address_or_nickname> <amont> <fee> <gas-price> --from <wallet|nickname|address>
 ```
 
 In `recipient_address_or_nickname`, CLI automatically check and parse for easy use.
 
-```text
-clif hdac transfer-to sisteranna 1000000 100000000 20000000 --wallet walletelsa
-clif hdac transfer-to sisteranna 1000000 100000000 20000000 --nickname princesselsa
-clif hdac transfer-to sisteranna 1000000 100000000 20000000 --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
+```bash
+clif hdac transfer-to friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz 10 0.01 30000000 --from walletelsa
+clif hdac transfer-to friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz 10 0.01 30000000 --from princesselsa
+clif hdac transfer-to sisteranna 10 0.01 30000000 --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
 
 ...
 <some texts of tx>
@@ -47,36 +65,33 @@ Password to sign with 'walletelsa': # input your password
 }
 ```
 
-### Get balance
+### Create validator
 
-Check the value of owner's balance
+Create and join as a validator with an address for reward and BLS-based validator consensus key
 
-```text
-clif hdac getbalance --nickname|--wallet|--address <owner>
+```bash
+clif hdac create-validator --from <wallet_alias> --pubkey <BLS_valconspub_key> [--moniker <moniker>] [--identity <identity>] [--website <website>] [--details <details>]
 ```
 
-```text
-clif hdac getbalance --wallet walletelsa
-clif hdac getbalance --nickname princesselsa
-clif hdac getbalance --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
-
-{
-   "value": "5000000000000"
-}
+```bash
+clif hdac create-validator \
+--from princesselsa \
+--pubkey $(nodef tendermint show-validator) \
+--moniker frozen
 ```
 
 ### Bond Hdac token
 
 Bond Hdac token for doing useful activity of Hdac ecosystem
 
-```text
-clif hdac bond --wallet|--address|--nickname <owner> <amount> <fee> <gas-price>
+```bash
+clif hdac bond --from <wallet|nickname|address> <amount> <fee> <gas-price>
 ```
 
-```text
-clif hdac bond --wallet walletelsa 1000000 100000000 30000000
-clif hdac bond --nickname princesselsa 1000000 100000000 30000000
-clif hdac bond --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv 1000000 100000000 30000000
+```bash
+clif hdac bond --from walletelsa 10 0.01 30000000
+clif hdac bond --from princesselsa 10 0.01 30000000
+clif hdac bond --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv 10 0.01 30000000
 
 confirm transaction before signing and broadcasting [y/N]: y
 Password to sign with 'walletelsa':
@@ -109,14 +124,14 @@ Password to sign with 'walletelsa':
 
 Unbond Hdac token for liquidating
 
-```text
-clif hdac unbond --wallet|--address|--nickname <owner> <amount> <fee> <gas-price>
+```bash
+clif hdac unbond --from <wallet|nickname|address> <amount> <fee> <gas-price>
 ```
 
-```text
-clif hdac unbond --wallet walletelsa 1000000 100000000 30000000
-clif hdac unbond --nickname princesselsa 1000000 100000000 30000000
-clif hdac unbond --address friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv 1000000 100000000 30000000
+```bash
+clif hdac unbond --from walletelsa 10 0.01 30000000
+clif hdac unbond --from princesselsa 10 0.01 30000000
+clif hdac unbond --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv 10 0.01 30000000
 
 confirm transaction before signing and broadcasting [y/N]: y
 Password to sign with 'walletelsa':
@@ -143,25 +158,5 @@ Password to sign with 'walletelsa':
     }
   ]
 }
-```
-
-### Create validator
-
-Create and join as a validator with an address for reward and BLS-based validator consensus key
-
-```text
-clif hdac create-validator --from <wallet_alias> --pubkey <BLS_valconspub_key> [--moniker <moniker>] [--identity <identity>] [--website <website>] [--details <details>]
-```
-
-```text
-nodef tendermint show-validator
-# fridayvalconspub16jrl8jvqq929y3r2dem455nptpd9g3mn0929q5eswaay6365vdtrx6j42dkrxtek24n5ycmpfax9s4mp9apkgkpe2vux64e0xe3xz5f09ucrje6e25cxwe3tf3kxjc6gfesnyv308p382ujc24snqn2kwfq45j60gc6nqs6wvfp8xen3d3ersnjnxfmrv6jv8pjxsmjtv3kxcapc09y5w5sa9v92q
-
- clif hdac create-validator \
---from bryan \
---pubkey fridayvalconspub16jrl8jvqq929y3r2dem455nptpd9g3mn0929q5eswaay6365vdtrx6j42dkrxtek24n5ycmpfax9s4mp9apkgkpe2vux64e0xe3xz5f09ucrje6e25cxwe3tf3kxjc6gfesnyv308p382ujc24snqn2kwfq45j60gc6nqs6wvfp8xen3d3ersnjnxfmrv6jv8pjxsmjtv3kxcapc09y5w5sa9v92q \
---moniker valiator-bryan
-
-# or --pubkey $(nodef tendermint show-validator)
 ```
 

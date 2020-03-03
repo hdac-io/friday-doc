@@ -9,10 +9,10 @@
 
 ## How to
 
-* [Join a Network](first-step/join-a-network.md)
-* [Play with Hdac Token](how-to/play-with-hdac-token.md)
+* [Join a Network](how-to/join-a-network.md)
+* [Create your wallet](how-to/create-your-wallet.md)
 * [Set Your Nickname](how-to/set-your-nickname.md)
-* [Play with Nickname](how-to/play-with-nickname.md)
+* [Play with Hdac Token](how-to/play-with-hdac-token.md)
 * [Work with RPC server](how-to/how-to-work-with-rpc-server.md)
 
 ## Validators
