@@ -2,29 +2,47 @@
 description: Build step
 ---
 
-# Installation
+# Install Friday
 
-## Build
-
-#### Prerequisites
+## Prerequisites
 
 * [Rust](https://www.rust-lang.org/tools/install)
-* [Golang](https://golang.org/doc/install) &gt;= 1.13
+* [Go](https://golang.org/doc/install) &gt;= 1.13
 * [protoc](http://google.github.io/proto-lens/installing-protoc.html) &gt;= 3.6.1
 * [rustup](https://rustup.rs/)
 * [node](https://nodejs.org/en/download/)
+* [git](https://www.git-scm.com/downloads)
 * make and cmake
 
-#### Build
+{% hint style="warning" %}
+You should set PATH environment and other mandatory settings for installed prerequisite packages.
+{% endhint %}
+
+## Build
+
+#### Clone repository
 
 ```bash
-make
+git clone https://github.com/hdac-io/friday.git
 ```
 
 #### Install
 
 ```bash
+cd friday
+
+# install required library package first
+npm install -g assemblyscript@0.9.1
+
+# build and install Friday
 make install
+```
+
+If installation succeeded, you can check Friday binaries.
+
+```bash
+nodef version
+clif version
 ```
 
 #### Test

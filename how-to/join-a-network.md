@@ -15,7 +15,7 @@ Do not [Deploy Your Own Friday Testnet](../first-step/deploy-your-own-friday-tes
 
 ### Instructions
 
-* First, run execution engine grpc server on your FRIDAY directory
+* First, run execution engine grpc server on your Friday directory
 
   ```bash
   ./CasperLabs/execution-engine/target/release/casperlabs-engine-grpc-server $HOME/.casperlabs/.casper-node.sock
@@ -41,11 +41,13 @@ Do not [Deploy Your Own Friday Testnet](../first-step/deploy-your-own-friday-tes
 
 * Replace `genesis.json` file of [launch repository](https://github.com/hdac-io/launch) to your config directory
 * Copy `manifest.toml` file of [launch repository](https://github.com/hdac-io/launch) to your config directory
-* Start your node and it syncs blocks from seed nodes
+* Start your node
 
   ```bash
   nodef start
   ```
+
+* Finally, your node syncs blocks from network and you can use your node when block sync finished
 
 ### Trouble Shooting
 

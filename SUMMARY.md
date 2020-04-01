@@ -4,7 +4,7 @@
 
 ## First step
 
-* [Installation](first-step/installation.md)
+* [Install Friday](first-step/installation.md)
 * [Deploy Your Own Friday Testnet](first-step/deploy-your-own-friday-testnet.md)
 
 ## How to
