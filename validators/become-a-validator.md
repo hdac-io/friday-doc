@@ -22,17 +22,20 @@ Users looking to operate a Friday validator should study up on the correct [secu
   clif hdac create-validator \
   --from <wallet alias> \
   --pubkey $(nodef tendermint show-validator) \
-  --moniker <validator moniker name>
+  --moniker <validator moniker name> \
+  --chain-id <chain-id>
   ```
 
 * Bond amount
 
   ```bash
-  clif hdac bond --from <wallet alias> 10 0.01 30000000
+  clif hdac bond \
+  --from <wallet alias> 10 0.01 30000000 \
+  --chain-id <chain-id>
   ```
 
 {% hint style="danger" %}
-If you want to disconnect your validator node, please beware of [unboning ](../cli/hdac-specific.md#unbond-hdac-token)it first!
+If you want to disconnect your validator node, please beware of [unbonding ](../cli/hdac-specific.md#unbond-hdac-token)it first!
 {% endhint %}
 
  
