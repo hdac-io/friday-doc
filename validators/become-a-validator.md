@@ -38,5 +38,3 @@ Users looking to operate a Friday validator should study up on the correct [secu
 If you want to disconnect your validator node, please beware of [unbonding ](../cli/hdac-specific.md#unbond-hdac-token)it first!
 {% endhint %}
 
- 
-

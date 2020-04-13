@@ -19,6 +19,7 @@
 
 * [Become a Validator](validators/become-a-validator.md)
 * [Security](validators/security.md)
+* [Troubleshooting](troubleshooting.md)
 
 ## CLI reference <a id="cli"></a>
 
