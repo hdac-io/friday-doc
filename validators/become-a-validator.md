@@ -44,6 +44,7 @@ If you want to disconnect your validator node, please beware of [unbonding ](../
 
 ```bash
 nodef tendermint show-address
+# DO NOT USE [ clif key shows <wallet_alias> --bech cons ]!!!
 # fridayvalcons1kgkzwcuvn6f4cuvcwnh5y3sn4yx9ejle3qwwe9
 ```
 
