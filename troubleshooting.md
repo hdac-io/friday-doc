@@ -48,6 +48,7 @@ created by github.com/hdac-io/tendermint/blockchain/v0.(*BlockchainReactor).OnSt
 * Please check your gRPC execution engine \(`casperlabs-engine-grpc-server`\)
 * Kill both of processes and reset by `nodef unsafe-reset-all` 
 * You should run `casperlabs-engine-grpc-server`first, and run `nodef start` later
+* If AppHash error is reproduced even when the grpc execution engine is running, please register as an issue to github.
 
 ## `clif` doesn't returns JSON
 
