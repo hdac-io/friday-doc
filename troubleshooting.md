@@ -10,7 +10,7 @@
   * Copy the error stack, recent 100 blocks, and the current block number of `nodef`, and `casperlabs-engine-grpc-server`
   * And paste it to our [issue tracker](https://github.com/hdac-io/friday/issues)
   * Or \#validator of [Discord](https://discord.gg/wT9Dhtd)
-  * And backup `~/.nodef` directory
+  * And backup `~/.nodef` directory. Other information could be needed for further investigation
 
 ## Sporadically occurring error while the network is running
 
