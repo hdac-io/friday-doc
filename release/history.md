@@ -2,6 +2,35 @@
 
 ​[​​![Travis](https://travis-ci.com/hdac-io/friday.svg?token=bhU3g7FdixBp5h3M2its&branch=master)​](https://travis-ci.com/hdac-io/friday/branches) [​​![codecov](https://codecov.io/gh/hdac-io/friday/branch/master/graph/badge.svg?token=hQEgzmULjh)​](https://codecov.io/gh/hdac-io/friday)​
 
+## 0.8.0 - 2020-04-11 <a id="0-4-0-2020-01-20"></a>
+
+#### Updates
+
+* Added query CLI for user delegation
+* Added vote feature \(both of transaction & query\)
+* Added Reward calculation based on delegated amount \(Claim feature will be added at the next release\)
+
+## 0.7.0 - 2020-03-26 <a id="0-4-0-2020-01-20"></a>
+
+#### Updates
+
+* Added delegation feature \(delegate, undelegate, redelegate system contract & CLI interface\)
+* Apply structure of system contract \(hdac\_mint & pop\)
+* Refactored stored value
+
+#### Known issues
+
+* Delegation statistics querying CLI doesn't work properly, so we decided not to include it this time. This feature will be included with next release
+
+## 0.6.0 - 2020-03-02 <a id="0-4-0-2020-01-20"></a>
+
+**Changes**
+
+* Align CLI commands and unifying cli flags\(--wallet, --nickname, --name\) to --from.
+* Add `client_api_proxy` contract hash to SYSTEM ACCOUNT's named key, so we can request common client APIs such as `bond`, `unbond`, `transfer_to_account` and `standard_payment` without transient session contracts.
+* Introduce HDAC unit and modify default gas price.
+* Add system account address alias so we can refer the system account address as `system` in CLI.
+
 ## 0.5.0 - 2020-02-17 <a id="0-4-0-2020-01-20"></a>
 
 **Features**
