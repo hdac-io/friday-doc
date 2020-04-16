@@ -177,6 +177,10 @@ If you not, please [check it here to run your own testnet in local.](../../first
 Now, let's run your contract into your local network.  
 I'll put "bryan" as an input parameter \(String\). The command is like the below:
 
+{% hint style="info" %}
+If you have curious about the look-like-complex input parameter, check [this document](https://github.com/CasperLabs/CasperLabs/blob/dev/docs/CONTRACTS.md#contract-argument-details).
+{% endhint %}
+
 ```bash
 clif contract run <type> <wasm-path>|<uref>|<name>|<hash> <argument> <fee> <gas_price> --from <from>
 ```
