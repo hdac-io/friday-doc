@@ -171,7 +171,7 @@ with the name "store\_value.wasm"
 You should check that the network is built and running.
 
 {% hint style="info" %}
-If you not, please [check it here to run your own testnet in local.](../../first-step/deploy-your-own-friday-testnet.md)
+If you not, please [check it here to run your own testnet in local.](../../../first-step/deploy-your-own-friday-testnet.md)
 {% endhint %}
 
 Now, let's run your contract into your local network.  
