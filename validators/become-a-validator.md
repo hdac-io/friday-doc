@@ -1,7 +1,7 @@
 # Become a Validator
 
 {% hint style="info" %}
-Before setting up your validator node, make sure you have already gone through the [Join a Network](../how-to/join-a-network.md) guide.
+Before setting up your validator node, make sure you have already gone through the [Join a Network](../how-to/node-operation/join-a-network.md) guide.
 {% endhint %}
 
 ## What is a Validator?
@@ -15,7 +15,7 @@ Users looking to operate a Friday validator should study up on the correct [secu
 ## Create Your Own Validator
 
 * Prepare local wallet
-  * [Create your wallet](../how-to/create-your-wallet.md)
+  * [Create your wallet](../how-to/node-operation/create-your-wallet.md)
 * Create validator
 
   ```bash

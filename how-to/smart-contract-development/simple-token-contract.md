@@ -1,0 +1,4 @@
+# Simple token contract
+
+TBD
+
