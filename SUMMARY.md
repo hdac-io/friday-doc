@@ -21,8 +21,8 @@
   * [Simple value store \(Current\)](how-to/smart-contract-development/simple-value-store-current/README.md)
     * [Simple value store \(Future\)](how-to/smart-contract-development/simple-value-store-current/simple-value-store-future.md)
   * [Simple token contract](how-to/smart-contract-development/simple-token-contract.md)
-  * [Test & debug your contract](how-to/smart-contract-development/test-and-debug-your-contract.md)
   * [Stored contract](how-to/smart-contract-development/stored-contract.md)
+  * [Test & debug your contract](how-to/smart-contract-development/test-and-debug-your-contract.md)
   * [Mailing list](how-to/smart-contract-development/mailing-list.md)
   * [Payable contract](how-to/smart-contract-development/payable-contract.md)
 
