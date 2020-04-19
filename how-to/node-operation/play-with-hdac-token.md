@@ -145,7 +145,7 @@ If succeeded, log appears clear without any error:
 
 If fails, you may see the error log as like below:
 
-Type 1:
+Type 1: Failed by contract execution error
 
 ```bash
 "height": "85192",
@@ -153,7 +153,7 @@ Type 1:
   "raw_log": "[{\"msg_index\":0,\"success\":false,\"log\":\"%!(EXTRA string=ERROR:\\nCodespace: contract\\nCode: 302\\nMessage: \\\"execution engine - cannot create deploy : %!(EXTRA string=Interpreter(Trap(Trap { kind: Revert(11) })))\\\"\\n)\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"executionengine\"}]}]}]",
 ```
 
-Type 2:
+Type 2: Failed by lack of gas. It appears `success: true` but it cannot be executed. Be careful!
 
 ```bash
 "height": "85192",
