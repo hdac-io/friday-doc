@@ -153,7 +153,7 @@ Type 1: Failed by contract execution error
   "raw_log": "[{\"msg_index\":0,\"success\":false,\"log\":\"%!(EXTRA string=ERROR:\\nCodespace: contract\\nCode: 302\\nMessage: \\\"execution engine - cannot create deploy : %!(EXTRA string=Interpreter(Trap(Trap { kind: Revert(11) })))\\\"\\n)\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"executionengine\"}]}]}]",
 ```
 
-Type 2: Failed by lack of gas. It appears `success: true` but it cannot be executed. Be careful!
+Type 2: Failed by lack of gas. It appears `success: true` but it wasn't executed. Be careful!
 
 ```bash
 "height": "85192",
