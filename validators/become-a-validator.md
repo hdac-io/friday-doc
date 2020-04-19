@@ -38,6 +38,10 @@ Users looking to operate a Friday validator should study up on the correct [secu
 If you want to disconnect your validator node, please beware of [unbonding ](../cli/hdac-specific.md#unbond-hdac-token)it first!
 {% endhint %}
 
+{% hint style="warning" %}
+You should check the status of every transaction you executed! There is a [guide of how to check the status!](../how-to/node-operation/play-with-hdac-token.md#check-your-transaction)
+{% endhint %}
+
 ## Check that you are in the validator pool
 
 * Check your validator consensus address
