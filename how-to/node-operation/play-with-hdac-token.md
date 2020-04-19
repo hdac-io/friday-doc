@@ -145,6 +145,16 @@ If succeeded, log appears clear without any error:
 
 If fails, you may see the error log as like below:
 
+Type 1:
+
+```bash
+"height": "85192",
+  "txhash": "AF9106388B01CA07D46A7184B3DBC5292E0CC5B32B2D489E6630EA03E803A9C8",
+  "raw_log": "[{\"msg_index\":0,\"success\":false,\"log\":\"%!(EXTRA string=ERROR:\\nCodespace: contract\\nCode: 302\\nMessage: \\\"execution engine - cannot create deploy : %!(EXTRA string=Interpreter(Trap(Trap { kind: Revert(11) })))\\\"\\n)\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"executionengine\"}]}]}]",
+```
+
+Type 2:
+
 ```bash
 "height": "85192",
   "txhash": "AF9106388B01CA07D46A7184B3DBC5292E0CC5B32B2D489E6630EA03E803A9C8",
