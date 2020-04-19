@@ -94,5 +94,60 @@ clif hdac unbond --from princesselsa 10 0.01 30000000
 clif hdac unbond --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv 10 0.01 30000000
 ```
 
+## Check your transaction
 
+```bash
+// ... confirm transaction before signing and broadcasting [y/N]: y
+// Password to sign with 'wallwtelsa': # 
+// input your password 
+{
+  "height": "0",
+  "txhash": "141F12A891659F52B055EF7F701B1D406E5F1721CE929630CC5CE3CE0C4C8718",
+  "raw_log": "[{\"msg_index\":0,\"success\":true,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"executionengine\"}]}]}]",
+  "logs": [
+    {
+      "msg_index": 0,
+      "success": true,
+      "log": "",
+      "events": [
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "action",
+              "value": "executionengine"
+            } 
+          ] 
+        } 
+      ]
+    }
+  ]
+}
+```
+
+After your transaction execution, you may see `"success": true`. But it doesn't guarantee that it is succeeded. The success message above means that the message sent successfully. Then, you should check the execution status separately.
+
+You can take transaction hash in JSON field `txhash`. Copy and paste in command as like below
+
+```bash
+clif query tx 141F12A891659F52B055EF7F701B1D406E5F1721CE929630CC5CE3CE0C4C8718
+# If contract execution, the message is too long to read.
+# Then, you may work with "| grep success"
+```
+
+If succeeded, log appears clear without any error:
+
+```bash
+"height": "85192",
+  "txhash": "AF9106388B01CA07D46A7184B3DBC5292E0CC5B32B2D489E6630EA03E803A9C8",
+  "raw_log": "[{\"msg_index\":0,\"success\":true,\"log\":"",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"executionengine\"}]}]}]",
+```
+
+If fails, you may see the error log as like below:
+
+```bash
+"height": "85192",
+  "txhash": "AF9106388B01CA07D46A7184B3DBC5292E0CC5B32B2D489E6630EA03E803A9C8",
+  "raw_log": "[{\"msg_index\":0,\"success\":true,\"log\":\"%!(EXTRA string=ERROR:\\nCodespace: contract\\nCode: 302\\nMessage: \\\"execution engine - deploy error - execute : %!(EXTRA string=Interpreter(Trap(Trap { kind: Host(GasLimit) })))\\\"\\n)\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"executionengine\"}]}]}]",
+```
 
