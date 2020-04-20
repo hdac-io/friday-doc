@@ -18,6 +18,7 @@ In [Simple value store](simple-value-store-current/) and [Simple token contract]
 
 ## Preparation
 
+* `nodef unsafe-reset-all` and `nodef start`
 * Duplicate project [Simple token contract](simple-token-contract.md) and rename to `simple_token_install`
 * Revise `Cargo.toml`
 
@@ -103,6 +104,8 @@ pub extern "C" fn call() {
     runtime::put_key(SIMPLE_TOKEN_KEY, pointer.into());
 }
 ```
+
+In `call()` , you are storing `simple_token_ext()` method into the Key named `simple_token` . After installed, you can call this contract by `simple_token` !
 
 Here is the whole contract:
 
@@ -244,7 +247,65 @@ Just run this contract without parameter
 clif contract run wasm simple_token_install.wasm '' 0.02 50000000 --from anna
 ```
 
+## Run contract by named key
+
+In above, I told that the method is stored at  key `simple_token`. Let's check it is real or not.
+
+```bash
+clif contract run name simple_token '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+clif contract run name simple_token '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+```
+
+After a few seconds, let's query the value. You may check the same result both of accounts.
+
+```bash
+# clif contract query address <contract_owner> <query_parameter>
+clif contract query address $(clif keys show anna -a) $(clif keys show anna -a)
+clif contract query address $(clif keys show anna -a) $(clif keys show elsa -a)
+
+#{
+#  "value": "big_int:\u003cvalue:\"100000\" bit_width:512 \u003e "
+#}
+```
+
+Both results are same although no WASM file is used from this execution.
+
+And let's run transfer.
+
+```bash
+clif contract run name simple_token '[{"name": "method", "value": {"string_value": "transfer"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "50000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+```
+
+Wait for a few second, and let's check the value.
+
+```bash
+# Sender
+{
+  "value": "big_int:\u003cvalue:\"50000\" bit_width:512 \u003e "
+}
+
+# Receiver
+{
+  "value": "big_int:\u003cvalue:\"150000\" bit_width:512 \u003e "
+}
+```
+
+It's same as the before tutorial! Proved that contract can be stored into Hdac mainnet!
+
 ## Check address of the contract
+
+But there is a problem.
+
+```bash
+Address
+|- Named key 1
+|- Named key 2
+...
+```
+
+Named key is rely on deployer's address. So, if you execute contract by name, Hdac mainnet trys to find name key from your address. It means that you cannot execute other user's contract. The contract can be executed only by the deployer. Then, how can Hdac mainnet run dApp?
+
+Don't worry! The contract has another unique name **Hash**. It is thought of as an address.
 
 TBD
 
