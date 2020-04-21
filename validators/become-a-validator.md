@@ -12,6 +12,14 @@ Before setting up your validator node, make sure you have already gone through t
 Users looking to operate a Friday validator should study up on the correct [security model](security.md), study [robust network topologies](become-a-validator.md), and familiarize themselves with the [Friday Consensus Mechanism](become-a-validator.md).
 {% endhint %}
 
+## Run your own node.
+
+* Please follow the instruction of [Join a Network](../how-to/node-operation/join-a-network.md)
+
+{% hint style="info" %}
+Be sure that `nodef` and `casperlabs-engine-grpc-server` should RUN AS DAEMONS. You should daemonize both of them by your own method. If not, you are going to [face the problem](../troubleshooting.md#node-dies-with-wrong-apphash-error).
+{% endhint %}
+
 ## Create Your Own Validator
 
 * Prepare local wallet
