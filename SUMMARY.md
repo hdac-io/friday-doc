@@ -23,7 +23,7 @@
   * [Simple token contract](how-to/smart-contract-development/simple-token-contract.md)
   * [Stored contract](how-to/smart-contract-development/stored-contract.md)
   * [Test & debug your contract](how-to/smart-contract-development/test-and-debug-your-contract.md)
-  * [Mailing list](how-to/smart-contract-development/mailing-list.md)
+  * [Store value with multiple keys](how-to/smart-contract-development/mailing-list.md)
   * [Payable contract](how-to/smart-contract-development/payable-contract.md)
 
 ## Validators
