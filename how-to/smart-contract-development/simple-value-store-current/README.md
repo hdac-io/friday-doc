@@ -9,7 +9,7 @@
 
 ## Prepare environment for your development
 
-* Be prepare [Rust](https://www.rust-lang.org/tools/install)
+* Be prepare [Rust](https://www.rust-lang.org/tools/install) language environment and its development knowledge
 * Go to the cloned `friday` repository and installed, go to:
   * `$FRIDAY_DIR/Casperlabs/execution_engine/contracts/examples`
 
