@@ -12,6 +12,7 @@ description: Build step
 * [rustup](https://rustup.rs/)
 * [node](https://nodejs.org/en/download/)
 * [git](https://www.git-scm.com/downloads)
+* [gcc](https://gcc.gnu.org/git.html) &gt;= 8.3
 * make and cmake
 
 {% hint style="warning" %}
