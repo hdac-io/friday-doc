@@ -31,7 +31,7 @@ clif hdac getbalance --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
 
 ### Transfer
 
-`clif hdac transfer-to <recipient_address_or_nickname> <amont> <fee> <gas-price> --from <wallet|nickname|address>`
+`clif hdac transfer-to <recipient_address_or_nickname> <amount> <fee> <gas-price> --from <wallet|nickname|address>`
 
 ```bash
 clif hdac transfer-to friday15evpva2u57vv6l5czehyk69s0wnq9hrkqulwfz 10 0.01 30000000 --from walletelsa
