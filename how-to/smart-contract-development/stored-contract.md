@@ -263,9 +263,12 @@ After a few seconds, let's query the value. You may check the same result both o
 clif contract query address $(clif keys show anna -a) $(clif keys show anna -a)
 clif contract query address $(clif keys show anna -a) $(clif keys show elsa -a)
 
-#{
-#  "value": "big_int:\u003cvalue:\"100000\" bit_width:512 \u003e "
-#}
+{
+  "bigInt": {
+    "value": "100000",
+    "bitWidth": 512
+  }
+}
 ```
 
 Both results are same although no WASM file is used from this execution.
@@ -281,12 +284,18 @@ Wait for a few second, and let's check the value.
 ```bash
 # Sender
 {
-  "value": "big_int:\u003cvalue:\"50000\" bit_width:512 \u003e "
+  "bigInt": {
+    "value": "50000",
+    "bitWidth": 512
+  }
 }
 
 # Receiver
 {
-  "value": "big_int:\u003cvalue:\"150000\" bit_width:512 \u003e "
+  "bigInt": {
+    "value": "150000",
+    "bitWidth": 512
+  }
 }
 ```
 
@@ -307,5 +316,88 @@ Named key is rely on deployer's address. So, if you execute contract by name, Hd
 
 Don't worry! The contract has another unique name **Hash**. It is thought of as an address.
 
-TBD
+You can check your named keys and its address as below
+
+```bash
+clif contract query $(clif keys show <wallet_allias> -a) ""
+```
+
+And you may get the output as like below:
+
+```bash
+{
+  "account": {
+    "publicKey": "ZnJpZGF5YmVnaW5zlZQhgB0pwu6b2APMiwHa8Cygnnc=",
+    "purseId": {
+      "uref": "j5ctqeDGJJi3D77MjKItpoxGegKJtBwBsvEYMeujYV8=",
+      "accessRights": "READ_ADD_WRITE"
+    },
+    "namedKeys": [
+      {
+        "name": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k",
+        "key": {
+          "uref": {
+            "uref": "m5XBQBVg3DG5GoW0IU8IJIk1vXJsUUc571WNIGmAfsk=",
+            "accessRights": "READ_ADD_WRITE"
+          }
+        }
+      },
+      {
+        "name": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd",
+        "key": {
+          "uref": {
+            "uref": "VprGQF1N6/6WXNt9EnyPENlPifNP0YfNJetpfT2lCxE=",
+            "accessRights": "READ_ADD_WRITE"
+          }
+        }
+      },
+      {
+        "name": "mint",
+        "key": {
+          "uref": {
+            "uref": "ZU2WKs0h72Ex2OttXsT+V8WCEEddat5QSpXFqOgN4KM=",
+            "accessRights": "READ"
+          }
+        }
+      },
+      {
+        "name": "pos",
+        "key": {
+          "uref": {
+            "uref": "DGs89SSwUiSHOLn/ka0LU3/3c4dJdNgjakZUb2WTlkw=",
+            "accessRights": "READ"
+          }
+        }
+      },
+      {
+        "name": "simple_token",
+        "key": {
+          "hash": {
+            "hash": "KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U="
+          }
+        }
+      }
+    ],
+    "associatedKeys": [
+      {
+        "publicKey": "AAAAZnJpZGF5YmVnaW5zlZQhgB0pwu6b2APMiwHa8Cw=",
+        "weight": 2694739713
+      }
+    ],
+    "actionThresholds": {
+      "deploymentThreshold": 1,
+      "keyManagementThreshold": 1
+    }
+  }
+}
+```
+
+Can you see `simple_token`? Your contract is stored at this hash and anyone can call by this hash!
+
+```bash
+clif contract run hash KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U= '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+clif contract run hash KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U= '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+```
+
+`KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U=` is now your address of the contract!
 

@@ -384,12 +384,18 @@ Wait for a few second, and let's check the value.
 ```bash
 # Sender
 {
-  "value": "big_int:\u003cvalue:\"50000\" bit_width:512 \u003e "
+  "bigInt": {
+    "value": "50000",
+    "bitWidth": 512
+  }
 }
 
 # Receiver
 {
-  "value": "big_int:\u003cvalue:\"150000\" bit_width:512 \u003e "
+  "bigInt": {
+    "value": "150000",
+    "bitWidth": 512
+  }
 }
 ```
 
