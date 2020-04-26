@@ -24,7 +24,7 @@
   * [Stored contract](how-to/smart-contract-development/stored-contract.md)
   * [Test & debug your contract](how-to/smart-contract-development/test-and-debug-your-contract.md)
   * [Store value with multiple keys](how-to/smart-contract-development/mailing-list.md)
-  * [ICO contract](how-to/smart-contract-development/payable-contract.md)
+  * [ICO contract](how-to/smart-contract-development/ico-contract.md)
   * [Asset control for exchange](how-to/smart-contract-development/asset-control-for-exchange.md)
 
 ## Validators
