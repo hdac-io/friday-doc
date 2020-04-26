@@ -181,7 +181,7 @@ This is the basic form of pushable Tx.
                 "signature": "<signature>",
                 "pub_key": {
                     "type": "tendermint/PubKeySecp256k1",
-                    "value": "<secp256k1_public_key>"
+                    "value": "<secp256k1_public_key_base64_encoded>"
                 },
                 "account_number": "<account_num>",
                 "sequence": "<seq_number>",
