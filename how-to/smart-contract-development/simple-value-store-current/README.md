@@ -80,7 +80,7 @@ fn store(value: String) {
 ```
 
 This function stores your input into key of the contract.  
-`storage::new_turef()` stores the value and return **T**yped **U**ser **Ref**erence&lt;String typed&gt;. And this TURef object is changed into `Key` by `.into()` method. Then, `KEY` is mapped to the stored value above. When you query, you may get the stored value by the `KEY` "special\_value".
+`storage::new_turef()` stores the value and return **T**yped **U**nforgeable **Ref**erence&lt;String typed&gt;. And this TURef object is changed into `Key` by `.into()` method. Then, `KEY` is mapped to the stored value above. When you query, you may get the stored value by the `KEY` "special\_value".
 
 ## Call function, the entry point of the execution
 

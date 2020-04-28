@@ -59,7 +59,7 @@ fn update_purse(address: String, amount: U512) {
 
 Though this snippet, you can learn how to store a value in the state of the contract.
 
-`storage::new_turef()` returns **T**yped **U**ser **Ref**rence with custom value. In this example, the type of the return is `TURef<U512>`, but many types are also available to store: `String, BTreeMap, Vec<U512>, Vec<String>, PublicKey, Key, ContractRef...`
+`storage::new_turef()` returns **T**yped **U**nforgeable **Ref**rence with custom value. In this example, the type of the return is `TURef<U512>`, but many types are also available to store: `String, BTreeMap, Vec<U512>, Vec<String>, PublicKey, Key, ContractRef...`
 
 Then, it should be changed into `Key::URef` type. `.into()` helps for it.
 
