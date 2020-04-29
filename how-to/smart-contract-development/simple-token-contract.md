@@ -6,6 +6,10 @@
 * Knows how to call method of the smart contract
 * Knows how to develop smart contract with token
 
+{% hint style="info" %}
+This example is just for your understanding token flow. Do not use this example at your actual token implementation. For being actual, we recommend to implement ERC-20 standard logic with overflow control.
+{% endhint %}
+
 ## Preparation
 
 * Create your project as described in [here](simple-value-store-current/#prepare-environment-for-your-development)

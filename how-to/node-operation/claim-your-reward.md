@@ -24,7 +24,7 @@ clif hdac claim reward <fee> <gas_price> --from <wallet_alias>
 clif hdac claim reward 0.001 80000000 --from alsa
 ```
 
-## Querying
+## Querying unclaimed reward/commission status
 
 ```bash
 clif hdac getreward --from <wallet_alias>

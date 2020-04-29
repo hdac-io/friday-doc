@@ -43,7 +43,7 @@ Be sure that `nodef` and `casperlabs-engine-grpc-server` should RUN AS DAEMONS. 
   ```
 
 {% hint style="danger" %}
-If you want to disconnect your validator node, please beware of [unbonding ](../cli/hdac-specific.md#unbond-hdac-token)it first!
+If you want to disconnect your validator node, please beware of [unbonding ](../cli/token.md#unbond-hdac-token)it first!
 {% endhint %}
 
 {% hint style="warning" %}

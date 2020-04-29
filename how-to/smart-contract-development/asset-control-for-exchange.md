@@ -95,6 +95,10 @@ brew                 |   firday1fkvdnv      |   124.14
 
 2\) Brief snippet for deposit contract
 
+{% hint style="info" %}
+This snippet is just a sample for following the logic in convenient way, and we do not guarantee of the work of the snippet if you use this copy & paste. You should digest the logic of your own project.
+{% endhint %}
+
 ```rust
 pub fn register(exchange_account: String){
     let deposit_account = runtime::get_caller();

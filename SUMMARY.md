@@ -36,14 +36,19 @@
 ## CLI reference <a id="cli"></a>
 
 * [Environment Variables](cli/environment-variables.md)
+* [Block/Tx](cli/block-tx.md)
 * [Nickname](cli/nickname.md)
-* [Hdac specific](cli/hdac-specific.md)
+* [Contract](cli/contract.md)
+* [Token](cli/token.md)
+* [Validator](cli/validator.md)
 
 ## RESTFul API reference <a id="restful-api"></a>
 
 * [Block/Tx](restful-api/block-tx.md)
 * [Nickname](restful-api/nickname.md)
-* [Hdac specific](restful-api/hdac-specific.md)
+* [Contract](restful-api/contract.md)
+* [Token](restful-api/token.md)
+* [Validator](restful-api/validator.md)
 
 ## Mechanism & Features Description
 
