@@ -40,8 +40,6 @@ clif query block 9
 
 If you not provide `height`, it queries the latest block.
 
-
-
 ## Check transaction status
 
 ```bash
