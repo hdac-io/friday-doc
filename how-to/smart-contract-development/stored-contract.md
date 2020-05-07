@@ -319,7 +319,7 @@ Don't worry! The contract has another unique name **Hash**. It is thought of as 
 You can check your named keys and its address as below
 
 ```bash
-clif contract query $(clif keys show <wallet_allias> -a) ""
+clif contract query address $(clif keys show <wallet_allias> -a) ""
 ```
 
 And you may get the output as like below:
