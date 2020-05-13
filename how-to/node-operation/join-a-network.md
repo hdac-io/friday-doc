@@ -29,6 +29,7 @@ Do not [Deploy Your Own Friday Testnet](../../first-step/deploy-your-own-friday-
 
   * You may set `node_name` what you want
   * You should input `chain_id` information described in [launch repository](https://github.com/hdac-io/launch)
+  * The consensus\_module must be entered by selecting friday or tendermint. It should match the chain, so check line 3-4 of genesis.json.
 
 * Edit `config.toml`  file of your config directory \(default: `$HOME/.nodef/config`\)
 
