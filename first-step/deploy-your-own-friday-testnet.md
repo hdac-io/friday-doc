@@ -10,10 +10,10 @@ Follow the steps below to create genesis block file and set initial validator.
 
 ```bash
 # run execution engine grpc server
-./CasperLabs/execution-engine/target/release/casperlabs-engine-grpc-server -t 8 $HOME/.casperlabs/.casper-node.sock&
+./CasperLabs/execution-engine/target/release/casperlabs-engine-grpc-server -t 8 $HOME/.casperlabs/.casper-node.sock -z&
 
 # init node
-nodef init testnode --chain-id testnet
+nodef init testnode tendermint --chain-id testnet
 
 # copy execution engine chain configurations
 cp ./x/executionlayer/resources/manifest.toml ~/.nodef/config

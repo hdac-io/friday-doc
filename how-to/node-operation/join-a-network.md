@@ -18,13 +18,13 @@ Do not [Deploy Your Own Friday Testnet](../../first-step/deploy-your-own-friday-
 * First, run execution engine grpc server on your Friday directory
 
   ```bash
-  ./CasperLabs/execution-engine/target/release/casperlabs-engine-grpc-server $HOME/.casperlabs/.casper-node.sock
+  ./CasperLabs/execution-engine/target/release/casperlabs-engine-grpc-server $HOME/.casperlabs/.casper-node.sock -z
   ```
 
 * Init your node
 
   ```bash
-  nodef init <node_name> --chain-id <chain_id>
+  nodef init <node_name> <consensus_module> --chain-id <chain_id>
   ```
 
   * You may set `node_name` what you want

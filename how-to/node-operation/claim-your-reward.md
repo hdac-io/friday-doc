@@ -13,15 +13,15 @@ With this process and formula, holders and validators should get reward for ever
 ## Claim commission \(validator\)
 
 ```bash
-clif hdac claim commission <fee> <gas_price> --from <wallet_alias>
-clif hdac claim commission 0.001 80000000 --from alsa
+clif hdac claim commission <fee> --from <wallet_alias>
+clif hdac claim commission 0.001 --from alsa
 ```
 
 ## Claim reward \(holder\)
 
 ```bash
-clif hdac claim reward <fee> <gas_price> --from <wallet_alias>
-clif hdac claim reward 0.001 80000000 --from alsa
+clif hdac claim reward <fee> --from <wallet_alias>
+clif hdac claim reward 0.001 --from alsa
 ```
 
 ## Querying unclaimed reward/commission status

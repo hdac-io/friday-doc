@@ -19,8 +19,8 @@ Both delegation and [bond](play-with-hdac-token.md#bond) command work for it. Yo
 ### Delegation to other validators
 
 ```bash
-clif hdac delegate <delegatee_address> <amount> <fee> <gas> --from <delegator_wallet_alias>
-clif hdac delegate friday135260rslw2gkhpph2gjclm5zvvaeaf9qw7tknm 1 0.002 30000000 --from enna
+clif hdac delegate <delegatee_address> <amount> <fee> --from <delegator_wallet_alias>
+clif hdac delegate friday135260rslw2gkhpph2gjclm5zvvaeaf9qw7tknm 1 0.002 --from enna
 ```
 
 Holders can stake and delegate to validators for making from the validator candidate to the actual validator. Then, top 100 validators will get commissions from block producing reimbursement, and holders will get some rewards.
@@ -28,13 +28,13 @@ Holders can stake and delegate to validators for making from the validator candi
 ### Undelegation / Redelegation
 
 ```bash
-clif hdac undelegate <delegatee_address> <amount> <fee> <gas> --from <delegator_wallet_alias>
-clif hdac undelegate friday135260rslw2gkhpph2gjclm5zvvaeaf9qw7tknm 1 0.002 30000000 --from enna
+clif hdac undelegate <delegatee_address> <amount> <fee> --from <delegator_wallet_alias>
+clif hdac undelegate friday135260rslw2gkhpph2gjclm5zvvaeaf9qw7tknm 1 0.002 --from enna
 ```
 
 ```bash
-clif hdac redelegate <from_delegatee> <to_delegatee> <amount> <fee> <gas> --from <delegator_wallet_alias>
-clif hdac redelegate friday135260rslw2gkhpph2gjclm5zvvaeaf9qw7tknm friday1yvmwx4j67qfryn8k2m0xxv8vvcn87cy4wz8wlg 1 0.002 30000000 --from enna
+clif hdac redelegate <from_delegatee> <to_delegatee> <amount> <fee> --from <delegator_wallet_alias>
+clif hdac redelegate friday135260rslw2gkhpph2gjclm5zvvaeaf9qw7tknm friday1yvmwx4j67qfryn8k2m0xxv8vvcn87cy4wz8wlg 1 0.002 --from enna
 ```
 
 If holders want to unstake and liquify their tokens, they execute undelegation. If they want to change your delegation power from one to others, redelegation is the answer.
@@ -54,15 +54,15 @@ Holders can vote up to the whole amount they delegated. The fee will be deducted
 ### Vote
 
 ```bash
-clif hdac vote <contract_hash> <amount> <fee> <gas-price> --from <wallet_alias>
-clif hdac vote 0000000000000000000000000000000000000000000000000000000000000000 1 0.002 30000000 --from fridayxxxxxxxxxxxxx
+clif hdac vote <contract_hash> <amount> <fee> --from <wallet_alias>
+clif hdac vote 0000000000000000000000000000000000000000000000000000000000000000 1 0.002 --from fridayxxxxxxxxxxxxx
 ```
 
 ### Unvote
 
 ```bash
-clif hdac unvote <contract_hash> <amount> <fee> <gas-price> --from <wallet_alias>
-clif hdac unvote 0000000000000000000000000000000000000000000000000000000000000000 1 0.002 30000000 --from fridayxxxxxxxxxxxxx
+clif hdac unvote <contract_hash> <amount> <fee> --from <wallet_alias>
+clif hdac unvote 0000000000000000000000000000000000000000000000000000000000000000 1 0.002 --from fridayxxxxxxxxxxxxx
 ```
 
 ## Querying the status

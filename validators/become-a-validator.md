@@ -27,7 +27,7 @@ Be sure that `nodef` and `casperlabs-engine-grpc-server` should RUN AS DAEMONS. 
 * Create validator
 
   ```bash
-  clif hdac create-validator \
+  clif hdac create-validator <fee> \
   --from <wallet alias> \
   --pubkey $(nodef tendermint show-validator) \
   --moniker <validator moniker name> \
@@ -38,7 +38,7 @@ Be sure that `nodef` and `casperlabs-engine-grpc-server` should RUN AS DAEMONS. 
 
   ```bash
   clif hdac bond \
-  --from <wallet alias> 10 0.01 30000000 \
+  --from <wallet alias> 10 0.01 \
   --chain-id <chain-id>
   ```
 

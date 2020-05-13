@@ -355,14 +355,14 @@ According to this type description, the organized JSON parameter can be below:
 By this rule,
 
 ```bash
-clif contract run <type> <wasm-path>|<uref>|<name>|<hash> <argument> <fee> <gas_price> --from <from>
+clif contract run <type> <wasm-path>|<uref>|<name>|<hash> <argument> <fee> --from <from>
 ```
 
 You can run the contract twice with each different parameters:
 
 ```bash
-clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
-clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
+clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
 ```
 
 After a few seconds, let's query the value. You may check the same result both of accounts.
@@ -380,7 +380,7 @@ clif contract query address $(clif keys show anna -a) $(clif keys show elsa -a)
 Then, let's try to transfer. You should organize `[method: String, from_address: String, to_address: String, amount: U512]` I believe you can organize the JSON input parameter. :\) Let's try to send 50000 tokens.
 
 ```bash
-clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "transfer"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "50000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "transfer"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "50000", "bit_width": 512}}}]' 0.02 --from anna
 ```
 
 Wait for a few second, and let's check the value.

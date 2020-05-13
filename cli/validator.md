@@ -5,11 +5,11 @@
 Create and join as a validator with an address for reward and BLS-based validator consensus key
 
 ```bash
-clif hdac create-validator --from <wallet_alias> --pubkey <BLS_valconspub_key> [--moniker <moniker>] [--identity <identity>] [--website <website>] [--details <details>]
+clif hdac create-validator <fee> --from <wallet_alias> --pubkey <BLS_valconspub_key> [--moniker <moniker>] [--identity <identity>] [--website <website>] [--details <details>]
 ```
 
 ```bash
-clif hdac create-validator \
+clif hdac create-validator 0.01 \
 --from princesselsa \
 --pubkey $(nodef tendermint show-validator) \
 --moniker frozen
@@ -18,11 +18,11 @@ clif hdac create-validator \
 ## Edit validator
 
 ```bash
-clif hdac edit-validator --from <from> [--moniker <moniker>] [--identity <identity>] [--website <site_address>] [--details <detail_description>]
+clif hdac edit-validator <fee> --from <from> [--moniker <moniker>] [--identity <identity>] [--website <site_address>] [--details <detail_description>]
 ```
 
 ```bash
-clif hdac edit-validator \
+clif hdac edit-validator 0.01 \
 --from anna \
 --moniker valval \
 --website tothemoon.io

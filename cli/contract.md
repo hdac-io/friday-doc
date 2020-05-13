@@ -3,7 +3,7 @@
 ## Contract run
 
 ```bash
-clif contract run wasm|uref|name|hash <wasm-path>|<uref>|<name>|<hash> <argument> <fee> <gas_price> --from <from>
+clif contract run wasm|uref|name|hash <wasm-path>|<uref>|<name>|<hash> <argument> <fee> --from <from>
 ```
 
 ```bash

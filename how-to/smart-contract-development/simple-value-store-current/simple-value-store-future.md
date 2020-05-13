@@ -78,11 +78,11 @@ If you not, please [check it here to run your own testnet in local.](../../../fi
 Now, let's run your contract into your local network.
 
 ```bash
-clif contract run <type> <wasm-path>|<uref>|<name>|<hash> <argument> <fee> <gas_price> --from <from>
+clif contract run <type> <wasm-path>|<uref>|<name>|<hash> <argument> <fee> --from <from>
 ```
 
 ```bash
-clif contract run wasm ./contract.wasm '"bryan"' 0.01 30000000 --from $YOUR_WALLET_ALIAS
+clif contract run wasm ./contract.wasm '"bryan"' 0.01 --from $YOUR_WALLET_ALIAS
 
 confirm transaction before signing and broadcasting [y/N]: y
 Password to sign with 'anna':

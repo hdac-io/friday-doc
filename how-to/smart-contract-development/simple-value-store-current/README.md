@@ -182,13 +182,13 @@ If you have curious about the look-like-complex input parameter, check [this doc
 {% endhint %}
 
 ```bash
-clif contract run <type> <wasm-path>|<uref>|<name>|<hash> <argument> <fee> <gas_price> --from <from>
+clif contract run <type> <wasm-path>|<uref>|<name>|<hash> <argument> <fee> --from <from>
 ```
 
 ```bash
 clif contract run wasm simple_store.wasm \ 
 '[{"name": "it_doesn_t_matter", "value": {"string_value": "bryan"}}' \ 
-0.02 50000000 --from <your_wallet_alias>
+0.02 --from <your_wallet_alias>
 
 confirm transaction before signing and broadcasting [y/N]: y
 Password to sign with 'anna':

@@ -244,7 +244,7 @@ with the name "store\_token\_install.wasm"
 Just run this contract without parameter
 
 ```bash
-clif contract run wasm simple_token_install.wasm '' 0.02 50000000 --from anna
+clif contract run wasm simple_token_install.wasm '' 0.02 --from anna
 ```
 
 ## Run contract by named key
@@ -252,8 +252,8 @@ clif contract run wasm simple_token_install.wasm '' 0.02 50000000 --from anna
 In above, I told that the method is stored at  key `simple_token`. Let's check it is real or not.
 
 ```bash
-clif contract run name simple_token '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
-clif contract run name simple_token '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+clif contract run name simple_token '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
+clif contract run name simple_token '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
 ```
 
 After a few seconds, let's query the value. You may check the same result both of accounts.
@@ -276,7 +276,7 @@ Both results are same although no WASM file is used from this execution.
 And let's run transfer.
 
 ```bash
-clif contract run name simple_token '[{"name": "method", "value": {"string_value": "transfer"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "50000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+clif contract run name simple_token '[{"name": "method", "value": {"string_value": "transfer"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "50000", "bit_width": 512}}}]' 0.02 --from anna
 ```
 
 Wait for a few second, and let's check the value.
@@ -395,8 +395,8 @@ And you may get the output as like below:
 Can you see `simple_token`? Your contract is stored at this hash and anyone can call by this hash!
 
 ```bash
-clif contract run hash KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U= '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
-clif contract run hash KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U= '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 50000000 --from anna
+clif contract run hash KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U= '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
+clif contract run hash KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U= '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
 ```
 
 `KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U=` is now your address of the contract!
