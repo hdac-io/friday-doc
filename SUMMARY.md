@@ -26,6 +26,7 @@
   * [Store value with multiple keys](how-to/smart-contract-development/mailing-list.md)
   * [ICO contract](how-to/smart-contract-development/ico-contract.md)
   * [Asset deposit control for exchanges](how-to/smart-contract-development/asset-control-for-exchange.md)
+  * [Contract argument details](how-to/smart-contract-development/contract-argument-details.md)
 
 ## Validators
 
