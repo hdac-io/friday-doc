@@ -59,7 +59,7 @@ extern crate alloc;
 use alloc::string::String;
 
 use contract::{
-    contract_api::{runtime, storage, TURef},
+    contract_api::{runtime, storage, URef},
     unwrap_or_revert::UnwrapOrRevert,
 };
 use types::{ApiError, Key};
@@ -108,7 +108,7 @@ extern crate alloc;
 use alloc::string::String;
 
 use contract::{
-    contract_api::{runtime, storage, TURef},
+    contract_api::{runtime, storage, URef},
     unwrap_or_revert::UnwrapOrRevert,
 };
 use types::{ApiError, Key};
