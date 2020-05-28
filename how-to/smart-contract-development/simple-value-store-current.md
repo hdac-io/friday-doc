@@ -73,14 +73,13 @@ Now, your development environment is ready! Let's start our the very first contr
 const KEY: &str = "special_value";
 
 fn store(value: String) {
-    let value_ref: TURef<String> = storage::new_turef(value);
-    let value_key: Key = value_ref.into();
-    runtime::put_key(KEY, value_key);
+    let value_ref: URef = storage::new_uref(value);
+    runtime::put_key(KEY, value_ref.into());
 }
 ```
 
 This function stores your input into key of the contract.  
-`storage::new_turef()` stores the value and return **T**yped **U**nforgeable **Ref**erence&lt;String typed&gt;. And this TURef object is changed into `Key` by `.into()` method. Then, `KEY` is mapped to the stored value above. When you query, you may get the stored value by the `KEY` "special\_value".
+`storage::new_uref()` stores the value and return **U**nforgeable **Ref**erence. And this URef object is changed into `Key` by `.into()` method. Then, `KEY` is mapped to the stored value above. When you query, you may get the stored value by the `KEY` "special\_value".
 
 ## Call function, the entry point of the execution
 
