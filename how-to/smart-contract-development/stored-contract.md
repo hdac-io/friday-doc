@@ -8,7 +8,7 @@ New Hdac mainnet supports 4 kinds of execution:
 2. By URef \(Kind of Stored contract hash\)
 3. By Hash \(Kind of Stored contract hash\)
 
-In [Simple value store](simple-value-store-current/) and [Simple token contract](simple-token-contract.md), we can execute contract by WebAssembly file. But if do that in every execution, the size of transaction goes huge and it can cause performance decrease of our main network. The contract binary needs to be stored and can be called by address.
+In [Simple value store](simple-value-store-current.md) and [Simple token contract](simple-token-contract.md), we can execute contract by WebAssembly file. But if do that in every execution, the size of transaction goes huge and it can cause performance decrease of our main network. The contract binary needs to be stored and can be called by address.
 
 ## Goal
 

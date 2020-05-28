@@ -1,4 +1,4 @@
-# Simple value store \(Current\)
+# Simple value store
 
 ## Goal
 
@@ -118,13 +118,10 @@ const KEY: &str = "special_value";
 
 fn store(value: String) {
     // Store `value` under a new unforgeable reference.
-    let value_ref: TURef<String> = storage::new_turef(value);
-
-    // Wrap the unforgeable reference in a value of type `Key`.
-    let value_key: Key = value_ref.into();
-
+    let value_ref: URef = storage::new_uref(value);
+    
     // Store this key under the name "special_value" in context-local storage.
-    runtime::put_key(KEY, value_key);
+    runtime::put_key(KEY, value_ref.into());
 }
 
 // All session code must have a `call` entrypoint.
@@ -171,7 +168,7 @@ with the name "store\_value.wasm"
 You should check that the network is built and running.
 
 {% hint style="info" %}
-If you not, please [check it here to run your own testnet in local.](../../../first-step/deploy-your-own-friday-testnet.md)
+If you not, please [check it here to run your own testnet in local.](../../first-step/deploy-your-own-friday-testnet.md)
 {% endhint %}
 
 Now, let's run your contract into your local network.  

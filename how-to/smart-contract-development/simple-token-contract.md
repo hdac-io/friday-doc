@@ -12,8 +12,8 @@ This example is just for your understanding token flow. Do not use this example 
 
 ## Preparation
 
-* Create your project as described in [here](simple-value-store-current/#prepare-environment-for-your-development)
-* Replace `Cargo.toml` as like [this](simple-value-store-current/#prepare-environment-for-your-development)
+* Create your project as described in [here](simple-value-store-current.md#prepare-environment-for-your-development)
+* Replace `Cargo.toml` as like [this](simple-value-store-current.md#prepare-environment-for-your-development)
 * Replace your `lib.rs` as like below
 
 ```rust
