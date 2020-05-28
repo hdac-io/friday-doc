@@ -25,7 +25,7 @@ use alloc::string::String;
 use core::convert::TryInto;
 
 use contract::{
-    contract_api::{runtime, storage, TURef},
+    contract_api::{runtime, storage, URef},
     unwrap_or_revert::UnwrapOrRevert,
 };
 use types::{ApiError, Key, U512};
@@ -53,17 +53,16 @@ use types::{ApiError, Key, U512};
 
 ```rust
 fn update_purse(address: String, amount: U512) {
-    let amount_turef: TURef<U512> = storage::new_turef(amount);
-    let amount_uref: Key = amount_turef.into();
+    let amount_uref: URef = storage::new_uref(amount);
 
     runtime::remove_key(address.as_str());
-    runtime::put_key(address.as_str(), amount_uref);
+    runtime::put_key(address.as_str(), amount_uref.into());
 }
 ```
 
 Though this snippet, you can learn how to store a value in the state of the contract.
 
-`storage::new_turef()` returns **T**yped **U**nforgeable **Ref**rence with custom value. In this example, the type of the return is `TURef<U512>`, but many types are also available to store: `String, BTreeMap, Vec<U512>, Vec<String>, PublicKey, Key, ContractRef...`
+`storage::new_uref()` returns **U**nforgeable **Ref**rence with custom value. In this example, the type of the return is `URef`, but many types are also available to store: `String, BTreeMap, Vec<U512>, Vec<String>, PublicKey, Key, ContractRef...`
 
 Then, it should be changed into `Key::URef` type. `.into()` helps for it.
 
@@ -82,10 +81,12 @@ fn load_or_create_purse(address: String) -> U512 {
         return U512::zero();
     }
 
-    let balance_uref = runtime::get_key(address.as_str()).unwrap_or_revert_with(ApiError::GetKey);
-    let balance_turef: TURef<U512> = balance_uref.try_into().unwrap_or_revert();
+    let balance_uref = runtime::get_key(address.as_str())
+        .unwrap_or_revert_with(ApiError::GetKey)
+        .try_into()
+        .unwrap_or_revert();
 
-    let balance = storage::read(balance_turef.clone())
+    let balance = storage::read(balance_uref.clone())
         .unwrap_or_revert_with(ApiError::Read)
         .unwrap_or_revert_with(ApiError::ValueNotFound);
 
@@ -95,7 +96,7 @@ fn load_or_create_purse(address: String) -> U512 {
 
 It loads how much money the given address has. If the purse does not exists, a new purse will be created.
 
-You may check how to load the value from key, which is opposite process of above. Get `URef` from `Key`, change to `TURef`, and load data from storage.
+You may check how to load the value from key, which is opposite process of above. Get `URef` from `Key`, and load data from storage.
 
 You may see many `unwrap_or_revert()` in there. They are kind of expansion of standard function `unwrap()` . If `Err(obj)` returns, execution reverts with the error code given.
 
@@ -188,18 +189,16 @@ use alloc::string::String;
 use core::convert::TryInto;
 
 use contract::{
-    contract_api::{runtime, storage, TURef},
+    contract_api::{runtime, storage, URef},
     unwrap_or_revert::UnwrapOrRevert,
 };
 use types::{ApiError, Key, U512};
 
 
 fn update_purse(address: String, amount: U512) {
-    let amount_turef: TURef<U512> = storage::new_turef(amount);
-    let amount_uref: Key = amount_turef.into();
-
+    let amount_uref: URef = storage::new_uref(amount);
     runtime::remove_key(address.as_str());
-    runtime::put_key(address.as_str(), amount_uref);
+    runtime::put_key(address.as_str(), amount_uref.into());
 }
 
 fn load_or_create_purse(address: String) -> U512 {
@@ -208,11 +207,12 @@ fn load_or_create_purse(address: String) -> U512 {
         return U512::zero();
     }
 
-    let balance_uref = runtime::get_key(address.as_str()).unwrap_or_revert_with(ApiError::GetKey);
-    let balance_turef: TURef<U512> = balance_uref.try_into().unwrap_or_revert();
-    //let balance_turef = TURef::from(balance_uref);
+    let balance_uref = runtime::get_key(address.as_str())
+        .unwrap_or_revert_with(ApiError::GetKey)
+        .try_into()
+        .unwrap_or_revert();
 
-    let balance = storage::read(balance_turef.clone())
+    let balance = storage::read(balance_uref.clone())
         .unwrap_or_revert_with(ApiError::Read)
         .unwrap_or_revert_with(ApiError::ValueNotFound);
 
