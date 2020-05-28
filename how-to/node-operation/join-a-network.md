@@ -11,7 +11,7 @@ Do not [Deploy Your Own Friday Testnet](../../first-step/deploy-your-own-friday-
 ### Prerequisites
 
 * Check launch information from [launch repository](https://github.com/hdac-io/launch)
-* Take `genesis.json` ,  `manifest.toml` file, `chain-id` and seed information from [launch repository](https://github.com/hdac-io/launch)
+* Take `genesis.json` ,  `chain-id` and seed information from [launch repository](https://github.com/hdac-io/launch)
 
 ### Instructions
 
@@ -41,7 +41,6 @@ Do not [Deploy Your Own Friday Testnet](../../first-step/deploy-your-own-friday-
   * Seed IP & ID are described in [launch repository](https://github.com/hdac-io/launch)
 
 * Replace `genesis.json` file of [launch repository](https://github.com/hdac-io/launch) to your config directory
-* Copy `manifest.toml` file of [launch repository](https://github.com/hdac-io/launch) to your config directory
 * Start your node
 
   ```bash
