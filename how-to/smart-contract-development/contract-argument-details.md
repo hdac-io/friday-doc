@@ -16,8 +16,8 @@ Note: contract arguments are positional, and so the `"name"` attribute is curren
 
 | protobuf [Arg](https://github.com/hdac-io/CasperLabs/blob/40f4b9de7d8693acfc62f71fac70afc854a6cd28/protobuf/io/casperlabs/casper/consensus/consensus.proto#L91) | Contract API type | Example value in [protobuf JSON format](https://developers.google.com/protocol-buffers/docs/proto3#json) |
 | :--- | :--- | :--- |
-| `I32` | `i32` | `[{"name":"amount","value":{"clType":{"simpleType":"I32"},"value":{"i32":123456}}}]` |
-| `I64` | `i64` | `[{"name":"amount","value":{"clType":{"simpleType":"I64"},"value":{"i64":"123456"}}}]` |
+| `I32` | `i32` | `[{"name":"amount","value":{"cl_type":{"simpleType":"I32"},"value":{"i32":123456}}}]` |
+| `I64` | `i64` | `[{"name":"amount","value":{"cl_type":{"simpleType":"I64"},"value":{"i64":"123456"}}}]` |
 | `U32` | `u32` | `[{"name":"amount","value":{"cl_type":{"simple_type":"U32"},"value":{"u32":123456}}}]` |
 | `U64` | `u64` | `[{"name":"amount","value":{"cl_type":{"simple_type":"U64"},"value":{"u64":"123456"}}}]` |
 | `U128` | `U128` | `[{"name":"amount","value":{"cl_type":{"simple_type":"U128"},"value":{"u128":{"value":"123456"}}}}]` |
@@ -27,7 +27,7 @@ Note: contract arguments are positional, and so the `"name"` attribute is curren
 | `option_value` | `Option<U512>` | `[{"name":"maybe_u512","value":{"cl_type":{"option_type":{"inner":{"simple_type":"U512"}}},"value":{"u512":{"value":"123456"}}}}]` |
 | `hash` | `Key::Hash` | `[{"name":"my_hash","value":{"cl_type":{"simple_type":"KEY"},"value":{"key":{"hash":{"hash":"kyNqkmPSrGGYxe0hF3THRdXcYqkQy4Qnb4p8SVkgiRU="}}}}}]` |
 | `address` | `Key::Address` | `[{"name":"my_address","value":{"clType":{"simpleType":"KEY"},"value":{"key":{"address":{"account":"kyNqkmPSrGGYxe0hF3THRdXcYqkQy4Qnb4p8SVkgiRU="}}}}}]` |
-| `uref` | `Key::URef` | `[{"name":"my_uref","value":{"clType":{"simpleType":"KEY"},"value":{"key":{"uref":{"uref":"kyNqkmPSrGGYxe0hF3THRdXcYqkQy4Qnb4p8SVkgiRU=","accessRights":"READ_ADD_WRITE"}}}}}]` |
+| `uref` | `Key::URef` | `[{"name":"my_uref","value":{"clType":{"simpleType":"KEY"},"value":{"key":{"uref":{"uref":"kyNqkmPSrGGYxe0hF3THRdXcYqkQy4Qnb4p8SVkgiRU=","access_rights":"READ_ADD_WRITE"}}}}}]` |
 | `local` | `Key::Local` | `[{"name":"my_uref","value":{"clType":{"simpleType":"KEY"},"value":{"key":{"local":{"hash":"kyNqkmPSrGGYxe0hF3THRdXcYqkQy4Qnb4p8SVkgiRWTI2qSY9KsYZjF7SEXdMdF1dxiqRDLhCdvinxJWSCJFQ=="}}}}}]` |
 | `byte_list` | `[u8]` | `[{"name":"address","value":{"cl_type":{"list_type":{"inner":{"simple_type":"U8"}}},"value":{"bytes_value":"1wJD3Z0NZG/W3ygqj3qPoFpmKb7AHYAkw2EescH7n4Q="}}}]` |
 
