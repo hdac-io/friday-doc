@@ -384,7 +384,7 @@ clif contract query address $(clif keys show anna -a) $(clif keys show elsa -a)
 Then, let's try to transfer. You should organize `[method: String, from_address: String, to_address: String, amount: U512]` I believe you can organize the JSON input parameter. :\) Let's try to send 50000 tokens.
 
 ```bash
-clif contract run wasm simple_token.wasm '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1pvajn4cu8w4futm7angklhhnrlyceqek4hghxu6fv2gj4x74tafsljmnyh"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"50000"}}}}]' 0.02 --from anna
+clif contract run wasm simple_token.wasm '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"transfer"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1pvajn4cu8w4futm7angklhhnrlyceqek4hghxu6fv2gj4x74tafsljmnyh"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"50000"}}}}]' 0.02 --from anna
 ```
 
 Wait for a few second, and let's check the value.

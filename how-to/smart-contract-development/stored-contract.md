@@ -118,18 +118,17 @@ use alloc::{string::String, collections::BTreeMap};
 use core::convert::TryInto;
 
 use contract::{
-    contract_api::{runtime, storage, TURef},
+    contract_api::{runtime, storage},
     unwrap_or_revert::UnwrapOrRevert,
 };
-use types::{ApiError, Key, U512};
+use types::{ApiError, Key, U512, URef};
 
 
 fn update_purse(address: String, amount: U512) {
-    let amount_turef: TURef<U512> = storage::new_turef(amount);
-    let amount_uref: Key = amount_turef.into();
+    let amount_uref = storage::new_uref(amount);
 
     runtime::remove_key(address.as_str());
-    runtime::put_key(address.as_str(), amount_uref);
+    runtime::put_key(address.as_str(), amount_uref.into());
 }
 
 fn load_or_create_purse(address: String) -> U512 {
@@ -138,11 +137,12 @@ fn load_or_create_purse(address: String) -> U512 {
         return U512::zero();
     }
 
-    let balance_uref = runtime::get_key(address.as_str()).unwrap_or_revert_with(ApiError::GetKey);
-    let balance_turef: TURef<U512> = balance_uref.try_into().unwrap_or_revert();
-    //let balance_turef = TURef::from(balance_uref);
+    let balance_uref: URef = runtime::get_key(address.as_str())
+        .unwrap_or_revert_with(ApiError::GetKey);
+        .try_into()
+        .unwrap_or_revert();
 
-    let balance = storage::read(balance_turef.clone())
+    let balance = storage::read(balance_uref.clone())
         .unwrap_or_revert_with(ApiError::Read)
         .unwrap_or_revert_with(ApiError::ValueNotFound);
 
@@ -252,8 +252,8 @@ clif contract run wasm simple_token_install.wasm '' 0.02 --from anna
 In above, I told that the method is stored at  key `simple_token`. Let's check it is real or not.
 
 ```bash
-clif contract run name simple_token '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
-clif contract run name simple_token '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
+clif contract run name simple_token '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"100000"}}}}]' 0.02 --from anna
+clif contract run name simple_token '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1pvajn4cu8w4futm7angklhhnrlyceqek4hghxu6fv2gj4x74tafsljmnyh"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"100000"}}}}]' 0.02 --from anna
 ```
 
 After a few seconds, let's query the value. You may check the same result both of accounts.
@@ -276,7 +276,7 @@ Both results are same although no WASM file is used from this execution.
 And let's run transfer.
 
 ```bash
-clif contract run name simple_token '[{"name": "method", "value": {"string_value": "transfer"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "50000", "bit_width": 512}}}]' 0.02 --from anna
+clif contract run name simple_token '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"transfer"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1pvajn4cu8w4futm7angklhhnrlyceqek4hghxu6fv2gj4x74tafsljmnyh"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"50000"}}}}]' 0.02 --from anna
 ```
 
 Wait for a few second, and let's check the value.
@@ -324,15 +324,33 @@ clif contract query address $(clif keys show <wallet_allias> -a) ""
 
 And you may get the output as like below:
 
-```bash
+```javascript
 {
   "account": {
-    "publicKey": "ZnJpZGF5YmVnaW5zlZQhgB0pwu6b2APMiwHa8Cygnnc=",
-    "purseId": {
-      "uref": "j5ctqeDGJJi3D77MjKItpoxGegKJtBwBsvEYMeujYV8=",
+    "publicKey": "0Go0RqMOZZkkIM4zQZN9hjITclbRGeUBi250rXzrmYU=",
+    "mainPurse": {
+      "uref": "bvgOE0xOgQAb+9I8Kj0UKQ4QcbjKxgO52wjDMC/YY6s=",
       "accessRights": "READ_ADD_WRITE"
     },
     "namedKeys": [
+      {
+        "name": "mint",
+        "key": {
+          "uref": {
+            "uref": "fridaycontracturef12gz99r4u32p22tcuvmuvhcg4nw5s5clnw5ena3qye75e8gt68kns0pr6lj",
+            "accessRights": "READ"
+          }
+        }
+      },
+      {
+        "name": "pos",
+        "key": {
+          "uref": {
+            "uref": "fridaycontracturef1qydead29jg44yktvptwh6ql9yuy2xzgytwrf2zcqjxjf5mmurqaq9ymwvw",
+            "accessRights": "READ"
+          }
+        }
+      },
       {
         "name": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k",
         "key": {
@@ -352,36 +370,18 @@ And you may get the output as like below:
         }
       },
       {
-        "name": "mint",
-        "key": {
-          "uref": {
-            "uref": "ZU2WKs0h72Ex2OttXsT+V8WCEEddat5QSpXFqOgN4KM=",
-            "accessRights": "READ"
-          }
-        }
-      },
-      {
-        "name": "pos",
-        "key": {
-          "uref": {
-            "uref": "DGs89SSwUiSHOLn/ka0LU3/3c4dJdNgjakZUb2WTlkw=",
-            "accessRights": "READ"
-          }
-        }
-      },
-      {
         "name": "simple_token",
         "key": {
           "hash": {
-            "hash": "KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U="
+            "hash": "fridaycontracthash1qydead29jg44yktvptwh6ql9yuy2xzgytwrf2zcqjxjf5mmurqaq9ymwvw/D63U="
           }
         }
       }
     ],
     "associatedKeys": [
       {
-        "publicKey": "AAAAZnJpZGF5YmVnaW5zlZQhgB0pwu6b2APMiwHa8Cw=",
-        "weight": 2694739713
+        "publicKey": "0Go0RqMOZZkkIM4zQZN9hjITclbRGeUBi250rXzrmYU=",
+        "weight": 1
       }
     ],
     "actionThresholds": {
@@ -395,8 +395,8 @@ And you may get the output as like below:
 Can you see `simple_token`? Your contract is stored at this hash and anyone can call by this hash!
 
 ```bash
-clif contract run hash KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U= '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
-clif contract run hash KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U= '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
+clif contract run hash fridaycontracthash1qydead29jg44yktvptwh6ql9yuy2xzgytwrf2zcqjxjf5mmurqaq9ymwvw '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"100000"}}}}]' 0.02 --from anna
+clif contract run hash fridaycontracthash1qydead29jg44yktvptwh6ql9yuy2xzgytwrf2zcqjxjf5mmurqaq9ymwvw '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"100000"}}}}]' 0.02 --from anna
 ```
 
 `KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U=` is now your address of the contract!
