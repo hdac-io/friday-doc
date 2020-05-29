@@ -25,10 +25,10 @@ use alloc::string::String;
 use core::convert::TryInto;
 
 use contract::{
-    contract_api::{runtime, storage, URef},
+    contract_api::{runtime, storage},
     unwrap_or_revert::UnwrapOrRevert,
 };
-use types::{ApiError, Key, U512};
+use types::{ApiError, U512, URef};
 ```
 
 ## Feature lists
@@ -81,7 +81,7 @@ fn load_or_create_purse(address: String) -> U512 {
         return U512::zero();
     }
 
-    let balance_uref = runtime::get_key(address.as_str())
+    let balance_uref: URef = runtime::get_key(address.as_str())
         .unwrap_or_revert_with(ApiError::GetKey)
         .try_into()
         .unwrap_or_revert();
@@ -189,10 +189,10 @@ use alloc::string::String;
 use core::convert::TryInto;
 
 use contract::{
-    contract_api::{runtime, storage, URef},
+    contract_api::{runtime, storage},
     unwrap_or_revert::UnwrapOrRevert,
 };
-use types::{ApiError, Key, U512};
+use types::{ApiError, U512, URef};
 
 
 fn update_purse(address: String, amount: U512) {
@@ -207,7 +207,7 @@ fn load_or_create_purse(address: String) -> U512 {
         return U512::zero();
     }
 
-    let balance_uref = runtime::get_key(address.as_str())
+    let balance_uref: URef = runtime::get_key(address.as_str())
         .unwrap_or_revert_with(ApiError::GetKey)
         .try_into()
         .unwrap_or_revert();
@@ -339,8 +339,8 @@ We will use the value of `address` field.
 
 We should organize input parameters into JSON array. For calling mint contract, you should organize `[method: String, address: String, amount: U512]` You may find each form of the type in [here](https://github.com/CasperLabs/CasperLabs/blob/dev/docs/CONTRACTS.md#contract-argument-details).
 
-* String: `{"name": "surname", "value": {"string_value": "Nakamoto"}}`
-* U512: `{"name": "amount", "value": {"big_int": {"value": "123456", "bit_width": 512}}}`
+* String: `{"name":"surname","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"Nakamoto"}}}`
+* U512: `{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"123456"}}}}`
 
 {% hint style="info" %}
 As they will support Enum, there is `name` field. But currently it doesn't affect to data input.
@@ -349,7 +349,7 @@ As they will support Enum, there is `name` field. But currently it doesn't affec
 According to this type description, the organized JSON parameter can be below:
 
 ```javascript
-[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]
+[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"123456"}}}}]
 ```
 
 By this rule,
@@ -361,9 +361,13 @@ clif contract run <type> <wasm-path>|<uref>|<name>|<hash> <argument> <fee> --fro
 You can run the contract twice with each different parameters:
 
 ```bash
-clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
-clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "mint"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "100000", "bit_width": 512}}}]' 0.02 --from anna
+clif contract run wasm simple_token.wasm '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"100000"}}}}]' 0.02 --from anna
+clif contract run wasm simple_token.wasm '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1pvajn4cu8w4futm7angklhhnrlyceqek4hghxu6fv2gj4x74tafsljmnyh"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"100000"}}}}]' 0.02 --from anna
 ```
+
+{% hint style="info" %}
+If you want to learn how to organize JSON, please check the document [Contract argument details](contract-argument-details.md).
+{% endhint %}
 
 After a few seconds, let's query the value. You may check the same result both of accounts.
 
@@ -373,14 +377,14 @@ clif contract query address $(clif keys show anna -a) $(clif keys show anna -a)
 clif contract query address $(clif keys show anna -a) $(clif keys show elsa -a)
 
 #{
-#  "value": "big_int:\u003cvalue:\"100000\" bit_width:512 \u003e "
+#  "stringValue": "100000"
 #}
 ```
 
 Then, let's try to transfer. You should organize `[method: String, from_address: String, to_address: String, amount: U512]` I believe you can organize the JSON input parameter. :\) Let's try to send 50000 tokens.
 
 ```bash
-clif contract run wasm simple_token.wasm '[{"name": "method", "value": {"string_value": "transfer"}},{"name": "address", "value": {"string_value": "friday1jk2zrqqa98pwax7cq0xgkqw67qk2p8nhcpup8k"}},{"name": "address", "value": {"string_value": "friday1qt8k20h3hmdx0qulgpppnlsg92hjjtvn59qkyd"}},{"name": "amount", "value": {"big_int": {"value": "50000", "bit_width": 512}}}]' 0.02 --from anna
+clif contract run wasm simple_token.wasm '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1pvajn4cu8w4futm7angklhhnrlyceqek4hghxu6fv2gj4x74tafsljmnyh"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"50000"}}}}]' 0.02 --from anna
 ```
 
 Wait for a few second, and let's check the value.
