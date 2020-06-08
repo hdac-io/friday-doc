@@ -6,7 +6,7 @@
 
 ## Implementation
 
-In this guide, no complete logic is not provided, but the concept.
+In this guide, a complete logic is not provided, but provides the concept.
 
 Basically, internal `name_key` is implemented with `BTreeMap`. It means that the index is implemented based on B-Tree, and it is key-value store, not RDB. But RDB-like feature is needed in many dApp. How to implement it?
 
