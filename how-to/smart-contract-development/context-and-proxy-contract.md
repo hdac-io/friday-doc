@@ -117,5 +117,7 @@ Please check 43rd-45th line. This line makes your contract be a contract context
 
 Then, the execution runs as a global, and access the contract's named key. Now, `runtime::put_key()` and `runtime::get_key()` looks up contract's named key.
 
+{% hint style="info" %}
 For detail implementation & contract installation, please check [this repository](https://github.com/hdac-io/swap).
+{% endhint %}
 
