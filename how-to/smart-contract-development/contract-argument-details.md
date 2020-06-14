@@ -30,6 +30,7 @@ Note: contract arguments are positional, and so the `"name"` attribute is curren
 | `uref` | `Key::URef` | `[{"name":"my_uref","value":{"clType":{"simpleType":"KEY"},"value":{"key":{"uref":{"uref":"kyNqkmPSrGGYxe0hF3THRdXcYqkQy4Qnb4p8SVkgiRU=","access_rights":"READ_ADD_WRITE"}}}}}]` |
 | `local` | `Key::Local` | `[{"name":"my_uref","value":{"clType":{"simpleType":"KEY"},"value":{"key":{"local":{"hash":"kyNqkmPSrGGYxe0hF3THRdXcYqkQy4Qnb4p8SVkgiRWTI2qSY9KsYZjF7SEXdMdF1dxiqRDLhCdvinxJWSCJFQ=="}}}}}]` |
 | `byte_list` | `[u8]` | `[{"name":"address","value":{"cl_type":{"list_type":{"inner":{"simple_type":"U8"}}},"value":{"bytes_value":"1wJD3Z0NZG/W3ygqj3qPoFpmKb7AHYAkw2EescH7n4Q="}}}]` |
+| List value | `Vec<type_of_above>` | `[{"name":"my_list","value":{"cl_type":{"list_type":{"inner":{"simple_type":"<type>"}}},"value":{"list_value":{"values":[{"<type>_value":"02c4ef70543e18889167ca67c8aa28c1d4c259e89cb34483a8ed6cfd3a03e8246b"},{..}]}}}}]` |
 
 Numeric values of `access_rights` in `uref` are defined in [\`enum AccessRights in state.proto](https://github.com/hdac-io/CasperLabs/blob/40f4b9de7d8693acfc62f71fac70afc854a6cd28/protobuf/io/casperlabs/casper/consensus/state.proto#L239).
 
