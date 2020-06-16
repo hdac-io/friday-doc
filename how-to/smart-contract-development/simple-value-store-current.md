@@ -280,7 +280,7 @@ You may execute as like below:
 clif contract query address $(clif keys show <wallet_alias> -a) special_value
 
 # {
-#   "value": "string_value:\"\\005\\000\\000\\000bryan\" "
+#   "value": "bryan"
 # }
 ```
 
