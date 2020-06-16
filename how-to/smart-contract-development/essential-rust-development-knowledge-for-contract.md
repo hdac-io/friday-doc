@@ -21,5 +21,5 @@ All sources come from [https://doc.rust-lang.org/book/](https://doc.rust-lang.or
 * [An I/O project](https://doc.rust-lang.org/book/ch12-00-an-io-project.html) - Don't have to know
 * [Iterator & closure](https://doc.rust-lang.org/book/ch13-00-functional-features.html) - Good to know
 * [More about cargo & crate.io](https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html) - Don't have to know
-* All belows - Don't have to know
+* Rest of belows - Don't have to know
 
