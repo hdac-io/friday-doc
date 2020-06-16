@@ -10,14 +10,18 @@
 ## Prepare environment for your development
 
 * Be prepare [Rust](https://www.rust-lang.org/tools/install) language environment and its development knowledge
-* Go to the cloned `friday` repository and installed, go to:
-  * `$FRIDAY_DIR/Casperlabs/execution_engine/contracts/examples`
 
 Execute it for creating your project
 
 ```bash
 cargo new simple_store --lib
 #  Created library `simple_store` package
+```
+
+Initialize as a Git repository
+
+```bash
+git init
 ```
 
 The folder `simple_store` is created. The structure is as like below:
@@ -27,6 +31,22 @@ simple_store/
 ├── src
 │   ├── lib.rs          // Main file of the library
 ├── Cargo.toml          // Setting for Package manager
+```
+
+Add text file named: `rust-toolchain`
+
+```bash
+nightly-2020-03-19
+```
+
+Then, file structure will be:
+
+```text
+simple_store/
+├── src
+│   ├── lib.rs          // Main file of the library
+├── Cargo.toml          // Setting for Package manager
+├── rust-toolchain      // Rust toolchain
 ```
 
 Open `Cargo.toml` and revise as like the below:
@@ -39,14 +59,20 @@ authors = ["Your_name <yourname@hdac.io>"]
 edition = "2018" // DO NOT CHANGE this. Related with Rust version
 
 [lib]
-crate-type = ["cdylib"]
+crate-type = ["lib", "cdylib"]
 bench = false
 doctest = false
 test = false
 
+[features]
+std = ["contract/std", "types/std"]
+lib = []
+enable-bonding = []
+
 [dependencies]
-contract = { path = "../../../contract", package = "casperlabs-contract" }
-types = { path = "../../../types", package = "casperlabs-types" }
+contract = { git="https://github.com/hdac-io/CasperLabs", branch="master", package = "casperlabs-contract", features = ["std"] }
+types = { git="https://github.com/hdac-io/CasperLabs", branch="master", package = "casperlabs-types", features = ["std"] }
+
 ```
 
 And open `src/lib.rs` , and replace the code as like below
@@ -141,24 +167,44 @@ pub extern "C" fn call() {
 
 ## Build your contract
 
-* Move to `$FRIDAY_DIR/Casperlabs/execution_engine`
-* Execute:
+### Build your own Makefile
+
+Please write your `Makefile` on your source root:
 
 ```bash
-make build-contract-rs/simple_store
+CARGO  = $(or $(shell which cargo),  $(HOME)/.cargo/bin/cargo)
+RUSTUP = $(or $(shell which rustup), $(HOME)/.cargo/bin/rustup)
 
-# /Users/bryan/.cargo/bin/cargo build \
-#                --release  \
-#                --package simple_store \
-#                --target wasm32-unknown-unknown
-# warning: /Users/bryan/gerrit/Casperlabs/execution-engine/Cargo.toml: unused manifest key: profile.release.overrides
-#   Compiling simple_store v0.1.0 (/Users/bryan/gerrit/Casperlabs/execution-engine/contracts/examples/simple_store)
-#    Finished release [optimized] target(s) in 0.34s
+RUST_TOOLCHAIN := $(shell cat rust-toolchain)
+
+build:
+	$(CARGO) build \
+	        --release $(filter-out --release, $(CARGO_FLAGS)) \
+	        --target wasm32-unknown-unknown
+
+.PHONY: setup
+setup: rust-toolchain
+	$(RUSTUP) update
+	$(RUSTUP) toolchain install $(RUST_TOOLCHAIN)
+	$(RUSTUP) target add --toolchain $(RUST_TOOLCHAIN) wasm32-unknown-unknown
+
 ```
 
-And you may find your contract binary at `$FRIDAY_DIR/Casperlabs/execution-engine/target/wasm32-unknown-unknown/release`
+### Build your WASM contract
 
-with the name "store\_value.wasm"
+Please execute it the first time
+
+```bash
+make setup
+```
+
+And, you may build it with:
+
+```bash
+make build
+```
+
+Your compiled result is placed in `./target/wasm32-unknown-unknown/store_value.wasm`.
 
 ## Run smart contract on your network
 
