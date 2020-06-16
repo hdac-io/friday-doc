@@ -18,6 +18,7 @@
   * [Claim your reward](how-to/node-operation/claim-your-reward.md)
   * [Work with RPC server](how-to/node-operation/how-to-work-with-rpc-server.md)
 * [Smart contract development](how-to/smart-contract-development/README.md)
+  * [Essential Rust development knowledge for contract](how-to/smart-contract-development/essential-rust-development-knowledge-for-contract.md)
   * [Simple value store](how-to/smart-contract-development/simple-value-store-current.md)
   * [Simple token contract](how-to/smart-contract-development/simple-token-contract.md)
   * [Stored contract](how-to/smart-contract-development/stored-contract.md)
