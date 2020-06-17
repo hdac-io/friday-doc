@@ -382,5 +382,5 @@ clif contract run hash fridaycontracthash1qydead29jg44yktvptwh6ql9yuy2xzgytwrf2z
 clif contract run hash fridaycontracthash1qydead29jg44yktvptwh6ql9yuy2xzgytwrf2zcqjxjf5mmurqaq9ymwvw '[{"name":"method","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"mint"}}},{"name":"address","value":{"cl_type":{"simple_type":"STRING"},"value":{"str_value":"friday1mc2dz6wmq678nhu360yf8yngq4657hret8zf3kx7c3tts0aweuasnjt3fk"}}},{"name":"amount","value":{"cl_type":{"simple_type":"U512"},"value":{"u512":{"value":"100000"}}}}]' 0.02 --from anna
 ```
 
-`KOdSXthj7pri1WpwtqPlmG5jO16T8FrquvWcq2/D63U=` is now your address of the contract!
+`fridaycontracthash1qydead29jg44yktvptwh6ql9yuy2xzgytwrf2zcqjxjf5mmurqaq9ymwvw` is now your address of the contract!
 
