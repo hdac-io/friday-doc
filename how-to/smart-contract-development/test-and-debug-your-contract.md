@@ -8,9 +8,19 @@
 ## Preparation
 
 * Complete [simple token contract](simple-token-contract.md)
-* Go to `$FRIDAY_PATH/CasperLabs/execution-engine/engine-tests/src/test`
-* Create directory `simple_token` and go to the directory
+* Create directory `tests` and go to the directory
 * `touch mod.rs`
+
+```text
+simple_store/
+├── src
+│   ├── lib.rs          // Main file of the library
+├── tests
+│   ├── mod.rs
+├── Cargo.toml          // Setting for Package manager
+├── rust-toolchain      // Rust toolchain
+```
+
 * Fill the `mod.rs` as below:
 
 ```rust
@@ -28,11 +38,24 @@ const METHOD_TRANSFER: &str = "transfer";
 ```
 
 * Change directory to upper level
-* Open `mod.rs` and add one more line `mod simple_token;`
+* Add a few lines in `Cargo.toml`
+
+```rust
+[dev-dependencies]
+criterion = "0.3.0"
+engine-shared = { git="https://github.com/hdac-io/CasperLabs", branch="master", package = "casperlabs-engine-shared" }
+engine-storage = { git="https://github.com/hdac-io/CasperLabs", branch="master", package = "casperlabs-engine-storage" }
+engine-wasm-prep = { git="https://github.com/hdac-io/CasperLabs", branch="master", package = "casperlabs-engine-wasm-prep" }
+lazy_static = "1"
+num-traits = "0.2.10"
+serde_json = "1"
+tempfile = "3"
+wabt = "0.9.2"
+```
 
 ## Write test code
 
-Move to `$FRIDAY_PATH/CasperLabs/execution-engine/engine-tests/src/test/simple_token` and write inside of `mod.rs`
+Move to `./tests` and write inside of `mod.rs`
 
 Let's start from here:
 
