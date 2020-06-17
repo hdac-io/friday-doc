@@ -282,24 +282,7 @@ pub extern "C" fn call() {
 
 ## Build your contract
 
-* Move to `$FRIDAY_DIR/Casperlabs/execution_engine`
-* Execute:
-
-```bash
-make build-contract-rs/simple_token
-
-# /Users/bryan/.cargo/bin/cargo build \
-#                --release  \
-#                --package simple_token \
-#                --target wasm32-unknown-unknown
-# warning: /Users/bryan/gerrit/Casperlabs/execution-engine/Cargo.toml: unused manifest key: profile.release.overrides
-#   Compiling simple_store v0.1.0 (/Users/bryan/gerrit/Casperlabs/execution-engine/contracts/examples/simple_token)
-#    Finished release [optimized] target(s) in 0.34s
-```
-
-And you may find your contract binary at `$FRIDAY_DIR/Casperlabs/execution-engine/target/wasm32-unknown-unknown/release`
-
-with the name "store\_token.wasm"
+* Make your own `Makefile` and build wasm contract as written in [here](simple-value-store-current.md#build-your-contract)
 
 ## Run & check smart contract on your network
 
