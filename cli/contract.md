@@ -38,7 +38,7 @@ clif contract run hash McGYvl4ku8yeVuDmYXp/UmEVtiDXjOhYeG2sAelIhIk= '[{"name": "
 ## Contract query
 
 ```bash
-clif contract query address|uref|hash|local <data> <path> [--blockhash <blockhash_since>] [flags]
+clif contract query address|uref|hash|local <data> [path] [--blockhash <blockhash_since>] [flags]
 ```
 
 ```bash
@@ -50,7 +50,7 @@ clif contract query address $(clif keys show anna -a) friday1jk2zrqqa98pwax7cq0x
 ## Query uref & hash status of the account
 
 ```bash
-clif contract query address <address> ""
+clif contract query address <address>
 ```
 
 ```bash

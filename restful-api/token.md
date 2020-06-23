@@ -16,7 +16,7 @@ Response:
 
 ```javascript
 {
-    "value": 500000000000000
+    "stringValue": "500000000000000"
 }
 ```
 
@@ -111,6 +111,26 @@ Response:
         "signatures": null,
         "memo": ""
     }
+}
+```
+
+## Get stake
+
+**\[GET\]** https://localhost:1317/hdac/stake?address=&lt;address\_or\_nickname&gt;
+
+Request:
+
+```text
+https://localhost:1317/hdac/stake?address=fridayxxxx...
+or
+https://localhost:1317/hdac/stake?address=princesselsa
+```
+
+Response:
+
+```javascript
+{
+    "stringValue": "1000000"
 }
 ```
 

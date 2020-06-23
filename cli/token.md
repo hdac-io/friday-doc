@@ -12,10 +12,7 @@ clif hdac getbalance --from <wallet|nickname|address>
 clif hdac getbalance --from walletelsa
 clif hdac getbalance --from princesselsa
 clif hdac getbalance --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
-
-{
-   "value": "5000000000000"
-}
+"5000000000000"
 ```
 
 ### Transfer
@@ -65,7 +62,7 @@ Password to sign with 'walletelsa': # input your password
 
 ## Ecosystem participation
 
-### Bond Hdac token \(Self delegation\)
+### Bond Hdac token
 
 ```
 clif hdac bond --from <wallet|nickname|address> <amount> <fee>
@@ -103,7 +100,7 @@ Password to sign with 'walletelsa':
 }
 ```
 
-### Unbond Hdac token \(Undelegation of self-delegated\)
+### Unbond Hdac token
 
 ```bash
 clif hdac unbond --from <wallet|nickname|address> <amount> <fee>
@@ -139,6 +136,19 @@ Password to sign with 'walletelsa':
     }
   ]
 }
+```
+
+### Get stake
+
+```bash
+clif hdac getstake --from <wallet|nickname|address>
+```
+
+```bash
+clif hdac getstake --from walletelsa
+clif hdac getstake --from princesselsa
+clif hdac getstake --from friday1y2dx0evs5k6hxuhfrfdmm7wcwsrqr073htghpv
+"10"
 ```
 
 ### Delegation
@@ -252,34 +262,29 @@ clif hdac vote <contract_hash> <amount> <fee> --from <wallet_alias>
 ```
 
 ```bash
-clif hdac vote 0000000000000000000000000000000000000000000000000000000000000000 1 0.002 30000000 --from fridayxxxxxxxxxxxxx
+clif hdac vote fridaycontractxxxxxxxxxxxxx 1 0.002 --from fridayxxxxxxxxxxxxx
 ```
 
 ### Unvote
 
 ```bash
-clif hdac unvote <contract_hash> <amount> <fee> --from <wallet_alias>
+clif hdac unvote <contract hash|uref> <amount> <fee> --from <wallet_alias>
 ```
 
 ```bash
-clif hdac unvote 0000000000000000000000000000000000000000000000000000000000000000 1 0.002 30000000 --from fridayxxxxxxxxxxxxx
+clif hdac unvote fridaycontractxxxxxxxxxxxxx 1 0.002 30000000 --from fridayxxxxxxxxxxxxx
 ```
 
 ### Query vote status
 
 ```bash
-clif hdac voter <contract_hash> [--from <holders_address>]
+clif hdac getvote [contract hash|uref] [--from <holders_address>]
 ```
 
 ```bash
-clif hdac voter AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
-
-[
-  {
-    "address": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
-    "amount": "1000000000000000000"
-  }
-]
+clif hdac getvote fridaycontractxxxxxxxxxxxxx
+clif hdac getvote --from fridayxxxxxxxxxxxxx
+"1"
 ```
 
 ## Claim
@@ -288,7 +293,7 @@ clif hdac voter AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 
 ```bash
 clif hdac claim commission <fee> --from <wallet_alias>
-clif hdac claim commission 0.001 --from alsa
+clif hdac claim commission 0.001 --from als
 ```
 
 ### Claim reward \(holders\)
