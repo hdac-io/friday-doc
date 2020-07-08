@@ -34,11 +34,22 @@ Be sure that `nodef` and `casperlabs-engine-grpc-server` should RUN AS DAEMONS. 
   --chain-id <chain-id>
   ```
 
+  * create-validator uses 1000HDAC for create fee
+
 * Bond amount
 
   ```bash
   clif hdac bond \
-  --from <wallet alias> 10 0.01 \
+  --from <wallet alias> <amount> <fee> \
+  --chain-id <chain-id>
+  ```
+
+* Self delegate bonded amount
+
+  ```bash
+  clif hdac delegate \
+  $(clif keys show <wallet alias> -a)
+  --from <wallet alias> <amount> <fee> \
   --chain-id <chain-id>
   ```
 
@@ -51,6 +62,57 @@ You should check the status of every transaction you executed! There is a [guide
 {% endhint %}
 
 ## Check that you are in the validator pool
+
+### Via execution engine state
+
+* Check your wallet address
+
+```bash
+clif keys show <wallet alias> -a
+```
+
+* Get the list of validators and lookup your address
+
+```bash
+$ clif hdac validator
+[
+  {
+    "address": "friday1plcrykeqtmgcq4ev3xkm286uyd8h470r9zqkuyj06yj1k2lvyuws8zg1xr",
+    "consensus_pubkey": "fridayvalconspub16jrl81vqq9k4sum8gg68vs2n0ph4jjjsv92hje6c1aehzurt89fhy7ndvd9kvs69gaekx3ng256xgjmpxdg8yarcxeknzdetgdeywcjjdquhzu6nt9f4wvrdgdyyj3mdve6424t0vdfysv6ewvhkcjmsxfp5gnf3gfrxcvj9gdtygar909m8z6z6293k5jzfvfkjkje0de5kznmnwd9kxkq6rmj7y",
+    "description": {
+      "moniker": "uno",
+      "identity": "",
+      "website": "",
+      "details": ""
+    },
+    "stake": "10000000000000000000"
+  },
+  {
+    "address": "friday1t8mlkkcrfyznqjudfhnufw7gr564ku1fx07zhgyxrqx3fd497j2sh1z8cj",
+    "consensus_pubkey": "fridayvalconspub16jrl81vqq9y4jv2tv36ku4tkvdgy7jfswp955mmd13c4q26hxffy75zvdpdy2vmwd4py57z42eyhg5e0wenh5sn42pp9v369f9py5722dd9xv5252ff52369deq57smr2uu4yvms9d38q7j2we9ry3tpxqmhz7jd25ujka6ff3vk7jnwdeyx6kt6veghveecw99z7n2f2pyjk3thv5uy7ss7jzlsw",
+    "description": {
+      "moniker": "dos",
+      "identity": "",
+      "website": "",
+      "details": ""
+    },
+    "stake": "10000000000000000000"
+  },
+  {
+    "address": "friday1hmm59jnjfaj13v62utxrp98lx7yx0z33qln55hde0kuh60azd6vq7al7q1",
+    "consensus_pubkey": "fridayvalconspub16jrl81vqq988sjpe9d28wc2d9a985nrktyeyk6j11fvhxnrhx9nxsnmex9z5k26k0gc4v6thdfp4zkn2w4uz7snyw56856ft89crz4m9g5enqu6ggftzk6rv2a2xw7rhxaeyynrtg42kwktgxecxw56wgexzka2g2enyyjtwg9exwvnexemkknp424thgcmev4c4wnrxdecxvdj0xfek64qj6jf0n",
+    "description": {
+      "moniker": "tres",
+      "identity": "",
+      "website": "",
+      "details": ""
+    },
+    "stake": "10000000000000000000"
+  }
+]
+```
+
+### Via tendermint state
 
 * Check your validator consensus address
 
